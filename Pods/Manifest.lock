@@ -1,0 +1,33 @@
+PODS:
+  - Expecta (0.2.2)
+  - Facebook-iOS-SDK (3.9.0)
+  - OCMock (2.2.1)
+  - Parse (1.2.15):
+    - Facebook-iOS-SDK (~> 3.7)
+  - Specta (0.1.11)
+  - SVProgressHUD (0.9)
+  - TPKeyboardAvoiding (1.2.1)
+
+DEPENDENCIES:
+  - Expecta
+  - OCMock
+  - Parse
+  - Specta (from `https://github.com/mattvv/specta.git`, branch `xctest_integration`)
+  - SVProgressHUD
+  - TPKeyboardAvoiding
+
+EXTERNAL SOURCES:
+  Specta:
+    :branch: xctest_integration
+    :git: https://github.com/mattvv/specta.git
+
+SPEC CHECKSUMS:
+  Expecta: 99adbb2e366a02796477523bfd426143350d9caf
+  Facebook-iOS-SDK: 5e1416dbdfc17b2620c2ca31c02e6feec042f2c1
+  OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
+  Parse: 200f5d714e38ed4c74e93d159e6fabaf2ab8d914
+  Specta: 82746c6fd70b104c5d37cfbadb7bf15a2cbc4da0
+  SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
+  TPKeyboardAvoiding: 0536c563e6c8b8e95a7c4bf87fca9c0991f5e826
+
+COCOAPODS: 0.28.0

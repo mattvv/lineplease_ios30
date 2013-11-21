@@ -1,34 +1,18 @@
-//
-//  LinePleaseTests.m
-//  LinePleaseTests
-//
-//  Created by Matt Van Veenendaal on 10/3/13.
-//  Copyright (c) 2013 lineplease. All rights reserved.
-//
+#import "Specta.h"
+#define EXP_SHORTHAND
+#import "Expecta.h"
+#import "Line.h"
 
-#import <XCTest/XCTest.h>
+SpecBegin(LinePleaseSpecs)
 
-@interface LinePleaseTests : XCTestCase
+/*
+ 
+ */
 
-@end
+describe(@"Line", ^{
+    it(@"is a subclass from pass", ^{
+        expect(YES).to.equal(true);
+    });
+});
 
-@implementation LinePleaseTests
-
-- (void)setUp
-{
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-}
-
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
-
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
-
-@end
+SpecEnd

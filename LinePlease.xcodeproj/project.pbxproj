@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0E7AA2B4884B2C8C4B79EA /* libPods-LinePleaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C7E93680124757A63536EB /* libPods-LinePleaseTests.a */; };
+		85F3A0C4BC0B4C4E8956A46C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD0559C796347E6BF0180AF /* libPods.a */; };
+		B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A4CEB17FFCD9100304FD6 /* LineViewController.m */; };
+		B24A4CEE17FFCDA500304FD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
+		B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28A7A79183DD33000169BDE /* AudioToolbox.framework */; };
+		B28A7A7B183DD33500169BDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
 		B28C00BC17FE6043004A31D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BB17FE6043004A31D9 /* Foundation.framework */; };
 		B28C00BE17FE6043004A31D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BD17FE6043004A31D9 /* CoreGraphics.framework */; };
 		B28C00C017FE6043004A31D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BF17FE6043004A31D9 /* UIKit.framework */; };
@@ -15,13 +21,23 @@
 		B28C00CC17FE6043004A31D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00CB17FE6043004A31D9 /* AppDelegate.m */; };
 		B28C00CF17FE6043004A31D9 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28C00CD17FE6043004A31D9 /* Main_iPhone.storyboard */; };
 		B28C00D217FE6043004A31D9 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28C00D017FE6043004A31D9 /* Main_iPad.storyboard */; };
-		B28C00D517FE6043004A31D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00D417FE6043004A31D9 /* ViewController.m */; };
+		B28C00D517FE6043004A31D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00D417FE6043004A31D9 /* LoginViewController.m */; };
 		B28C00D717FE6043004A31D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28C00D617FE6043004A31D9 /* Images.xcassets */; };
 		B28C00DE17FE6043004A31D9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00DD17FE6043004A31D9 /* XCTest.framework */; };
 		B28C00DF17FE6043004A31D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BB17FE6043004A31D9 /* Foundation.framework */; };
 		B28C00E017FE6043004A31D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BF17FE6043004A31D9 /* UIKit.framework */; };
 		B28C00E817FE6043004A31D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B28C00E617FE6043004A31D9 /* InfoPlist.strings */; };
 		B28C00EA17FE6043004A31D9 /* LinePleaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00E917FE6043004A31D9 /* LinePleaseTests.m */; };
+		B28C00F617FE62DE004A31D9 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00F517FE62DE004A31D9 /* Line.m */; };
+		B28C00F717FE62DE004A31D9 /* Line.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00F517FE62DE004A31D9 /* Line.m */; };
+		B28C00FE17FE66F5004A31D9 /* Script.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00FD17FE66F5004A31D9 /* Script.m */; };
+		B28C00FF17FE66F5004A31D9 /* Script.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C00FD17FE66F5004A31D9 /* Script.m */; };
+		B28C010217FE670B004A31D9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C010117FE670B004A31D9 /* User.m */; };
+		B28C010317FE670B004A31D9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B28C010117FE670B004A31D9 /* User.m */; };
+		B2C8896B17FE727800C66707 /* LoginViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C8896A17FE727800C66707 /* LoginViewControllerSpec.m */; };
+		B2C8896F17FE7FEB00C66707 /* AlertViewProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C8896E17FE7FEB00C66707 /* AlertViewProvider.m */; };
+		B2C8897017FE7FEB00C66707 /* AlertViewProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C8896E17FE7FEB00C66707 /* AlertViewProvider.m */; };
+		B2C8897317FE9B1600C66707 /* ScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C8897217FE9B1600C66707 /* ScriptViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1AE31AC999B34434A27DF5A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		ABD0559C796347E6BF0180AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B24A4CEA17FFCD9100304FD6 /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
+		B24A4CEB17FFCD9100304FD6 /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
+		B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B28A7A79183DD33000169BDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B28C00B817FE6043004A31D9 /* LinePlease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinePlease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C00BB17FE6043004A31D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B28C00BD17FE6043004A31D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,14 +69,27 @@
 		B28C00CB17FE6043004A31D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B28C00CE17FE6043004A31D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		B28C00D117FE6043004A31D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		B28C00D317FE6043004A31D9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B28C00D417FE6043004A31D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B28C00D317FE6043004A31D9 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B28C00D417FE6043004A31D9 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		B28C00D617FE6043004A31D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B28C00DC17FE6043004A31D9 /* LinePleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LinePleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C00DD17FE6043004A31D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B28C00E517FE6043004A31D9 /* LinePleaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LinePleaseTests-Info.plist"; sourceTree = "<group>"; };
 		B28C00E717FE6043004A31D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B28C00E917FE6043004A31D9 /* LinePleaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinePleaseTests.m; sourceTree = "<group>"; };
+		B28C00F417FE62DE004A31D9 /* Line.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Line.h; path = Models/Line.h; sourceTree = "<group>"; };
+		B28C00F517FE62DE004A31D9 /* Line.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Line.m; path = Models/Line.m; sourceTree = "<group>"; };
+		B28C00FC17FE66F5004A31D9 /* Script.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Script.h; path = Models/Script.h; sourceTree = "<group>"; };
+		B28C00FD17FE66F5004A31D9 /* Script.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Script.m; path = Models/Script.m; sourceTree = "<group>"; };
+		B28C010017FE670B004A31D9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		B28C010117FE670B004A31D9 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
+		B2C8896A17FE727800C66707 /* LoginViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewControllerSpec.m; sourceTree = "<group>"; };
+		B2C8896D17FE7FEB00C66707 /* AlertViewProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AlertViewProvider.h; path = Utils/AlertViewProvider.h; sourceTree = "<group>"; };
+		B2C8896E17FE7FEB00C66707 /* AlertViewProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AlertViewProvider.m; path = Utils/AlertViewProvider.m; sourceTree = "<group>"; };
+		B2C8897117FE9B1600C66707 /* ScriptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptViewController.h; sourceTree = "<group>"; };
+		B2C8897217FE9B1600C66707 /* ScriptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptViewController.m; sourceTree = "<group>"; };
+		C3C7E93680124757A63536EB /* libPods-LinePleaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LinePleaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5260917E6EE42A898ED01EF /* Pods-LinePleaseTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LinePleaseTests.xcconfig"; path = "Pods/Pods-LinePleaseTests.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +97,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28A7A7B183DD33500169BDE /* AVFoundation.framework in Frameworks */,
+				B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */,
 				B28C00BE17FE6043004A31D9 /* CoreGraphics.framework in Frameworks */,
 				B28C00C017FE6043004A31D9 /* UIKit.framework in Frameworks */,
 				B28C00BC17FE6043004A31D9 /* Foundation.framework in Frameworks */,
+				85F3A0C4BC0B4C4E8956A46C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,9 +110,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24A4CEE17FFCDA500304FD6 /* AVFoundation.framework in Frameworks */,
 				B28C00DE17FE6043004A31D9 /* XCTest.framework in Frameworks */,
 				B28C00E017FE6043004A31D9 /* UIKit.framework in Frameworks */,
 				B28C00DF17FE6043004A31D9 /* Foundation.framework in Frameworks */,
+				0E0E7AA2B4884B2C8C4B79EA /* libPods-LinePleaseTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +128,8 @@
 				B28C00E317FE6043004A31D9 /* LinePleaseTests */,
 				B28C00BA17FE6043004A31D9 /* Frameworks */,
 				B28C00B917FE6043004A31D9 /* Products */,
+				1AE31AC999B34434A27DF5A2 /* Pods.xcconfig */,
+				C5260917E6EE42A898ED01EF /* Pods-LinePleaseTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +145,14 @@
 		B28C00BA17FE6043004A31D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B28A7A79183DD33000169BDE /* AudioToolbox.framework */,
+				B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */,
 				B28C00BB17FE6043004A31D9 /* Foundation.framework */,
 				B28C00BD17FE6043004A31D9 /* CoreGraphics.framework */,
 				B28C00BF17FE6043004A31D9 /* UIKit.framework */,
 				B28C00DD17FE6043004A31D9 /* XCTest.framework */,
+				ABD0559C796347E6BF0180AF /* libPods.a */,
+				C3C7E93680124757A63536EB /* libPods-LinePleaseTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,14 +160,20 @@
 		B28C00C117FE6043004A31D9 /* LinePlease */ = {
 			isa = PBXGroup;
 			children = (
+				B2C8896C17FE7FC900C66707 /* Utils */,
+				B28C00F317FE6295004A31D9 /* Models */,
 				B28C00CA17FE6043004A31D9 /* AppDelegate.h */,
 				B28C00CB17FE6043004A31D9 /* AppDelegate.m */,
 				B28C00CD17FE6043004A31D9 /* Main_iPhone.storyboard */,
 				B28C00D017FE6043004A31D9 /* Main_iPad.storyboard */,
-				B28C00D317FE6043004A31D9 /* ViewController.h */,
-				B28C00D417FE6043004A31D9 /* ViewController.m */,
+				B28C00D317FE6043004A31D9 /* LoginViewController.h */,
+				B28C00D417FE6043004A31D9 /* LoginViewController.m */,
 				B28C00D617FE6043004A31D9 /* Images.xcassets */,
 				B28C00C217FE6043004A31D9 /* Supporting Files */,
+				B2C8897117FE9B1600C66707 /* ScriptViewController.h */,
+				B2C8897217FE9B1600C66707 /* ScriptViewController.m */,
+				B24A4CEA17FFCD9100304FD6 /* LineViewController.h */,
+				B24A4CEB17FFCD9100304FD6 /* LineViewController.m */,
 			);
 			path = LinePlease;
 			sourceTree = "<group>";
@@ -142,6 +194,7 @@
 			children = (
 				B28C00E917FE6043004A31D9 /* LinePleaseTests.m */,
 				B28C00E417FE6043004A31D9 /* Supporting Files */,
+				B2C8896A17FE727800C66707 /* LoginViewControllerSpec.m */,
 			);
 			path = LinePleaseTests;
 			sourceTree = "<group>";
@@ -155,6 +208,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B28C00F317FE6295004A31D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B28C00F417FE62DE004A31D9 /* Line.h */,
+				B28C00F517FE62DE004A31D9 /* Line.m */,
+				B28C00FC17FE66F5004A31D9 /* Script.h */,
+				B28C00FD17FE66F5004A31D9 /* Script.m */,
+				B28C010017FE670B004A31D9 /* User.h */,
+				B28C010117FE670B004A31D9 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		B2C8896C17FE7FC900C66707 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B2C8896D17FE7FEB00C66707 /* AlertViewProvider.h */,
+				B2C8896E17FE7FEB00C66707 /* AlertViewProvider.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +237,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B28C00ED17FE6043004A31D9 /* Build configuration list for PBXNativeTarget "LinePlease" */;
 			buildPhases = (
+				8F09B8963F614221B74DFA26 /* Check Pods Manifest.lock */,
 				B28C00B417FE6043004A31D9 /* Sources */,
 				B28C00B517FE6043004A31D9 /* Frameworks */,
 				B28C00B617FE6043004A31D9 /* Resources */,
+				B6589377E88543F0A885F7E6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B28C00F017FE6043004A31D9 /* Build configuration list for PBXNativeTarget "LinePleaseTests" */;
 			buildPhases = (
+				6F2EDE4181694E96A5110D8E /* Check Pods Manifest.lock */,
 				B28C00D817FE6043004A31D9 /* Sources */,
 				B28C00D917FE6043004A31D9 /* Frameworks */,
 				B28C00DA17FE6043004A31D9 /* Resources */,
+				58849FC0BA78419698968FE3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +281,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = lineplease;
 				TargetAttributes = {
+					B28C00B717FE6043004A31D9 = {
+						DevelopmentTeam = CCEY4XNAFJ;
+					};
 					B28C00DB17FE6043004A31D9 = {
 						TestTargetID = B28C00B717FE6043004A31D9;
 					};
@@ -248,13 +330,82 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		58849FC0BA78419698968FE3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-LinePleaseTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F2EDE4181694E96A5110D8E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F09B8963F614221B74DFA26 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6589377E88543F0A885F7E6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B28C00B417FE6043004A31D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B28C00D517FE6043004A31D9 /* ViewController.m in Sources */,
+				B28C00D517FE6043004A31D9 /* LoginViewController.m in Sources */,
+				B28C00F617FE62DE004A31D9 /* Line.m in Sources */,
+				B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */,
+				B28C010217FE670B004A31D9 /* User.m in Sources */,
 				B28C00CC17FE6043004A31D9 /* AppDelegate.m in Sources */,
+				B28C00FE17FE66F5004A31D9 /* Script.m in Sources */,
+				B2C8897317FE9B1600C66707 /* ScriptViewController.m in Sources */,
+				B2C8896F17FE7FEB00C66707 /* AlertViewProvider.m in Sources */,
 				B28C00C817FE6043004A31D9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +414,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28C010317FE670B004A31D9 /* User.m in Sources */,
+				B28C00FF17FE66F5004A31D9 /* Script.m in Sources */,
+				B2C8897017FE7FEB00C66707 /* AlertViewProvider.m in Sources */,
+				B2C8896B17FE727800C66707 /* LoginViewControllerSpec.m in Sources */,
 				B28C00EA17FE6043004A31D9 /* LinePleaseTests.m in Sources */,
+				B28C00F717FE62DE004A31D9 /* Line.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -357,7 +513,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -389,32 +545,43 @@
 		};
 		B28C00EE17FE6043004A31D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE31AC999B34434A27DF5A2 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LinePlease/LinePlease-Prefix.pch";
 				INFOPLIST_FILE = "LinePlease/LinePlease-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		B28C00EF17FE6043004A31D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE31AC999B34434A27DF5A2 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LinePlease/LinePlease-Prefix.pch";
 				INFOPLIST_FILE = "LinePlease/LinePlease-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		B28C00F117FE6043004A31D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5260917E6EE42A898ED01EF /* Pods-LinePleaseTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LinePlease.app/LinePlease";
@@ -438,6 +605,7 @@
 		};
 		B28C00F217FE6043004A31D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5260917E6EE42A898ED01EF /* Pods-LinePleaseTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LinePlease.app/LinePlease";
@@ -474,6 +642,7 @@
 				B28C00EF17FE6043004A31D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B28C00F017FE6043004A31D9 /* Build configuration list for PBXNativeTarget "LinePleaseTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +651,7 @@
 				B28C00F217FE6043004A31D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
