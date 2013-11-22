@@ -7,16 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
 #import "AlertViewProvider.h"
 
 @interface LoginViewController : UIViewController
-
-@property (nonatomic, strong) IBOutlet UITextField *usernameTextField;
-@property (nonatomic, strong) IBOutlet UITextField *passwordTextField;
-@property (nonatomic, strong) IBOutlet UIButton *loginButton;
-
-@property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) AlertViewProvider *alertProvider;

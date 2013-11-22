@@ -9,7 +9,7 @@ end
 pod 'Parse'
 pod 'SVProgressHUD'
 pod 'TPKeyboardAvoiding'
+pod 'HTAutocompleteTextField' #auto-complete for email address
 
-#pod 'REMenu', '~> 1.7' #sweet navigation menu for inside the app
 #pod "Appirater" #in app reviews
-#pod 'HTAutocompleteTextField' #auto-complete for email address
+

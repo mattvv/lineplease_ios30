@@ -16,25 +16,31 @@
     //todo: figure out how to mock class methods
     self.user = [User object];
     self.alertProvider = [[AlertViewProvider alloc] init];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     [super viewDidLoad];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    if ([User currentUser]) {
+        //we have a current user so lets move on
+        [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+    }
     [super viewWillAppear:animated];
 }
 
 - (IBAction)loginTapped:(id)sender {
-    [SVProgressHUD showWithStatus:@"Logging in"];
-    [self.user logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
-        
-        if (!error) {
-            [SVProgressHUD showSuccessWithStatus:@"Success"];
-            [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+    NSArray *permissions = nil;
+    [SVProgressHUD show];
+    [PFFacebookUtils logInWithPermissions:permissions block:^(PFUser *user, NSError *error) {
+        if (!user) {
+            NSLog(@"Uh oh. The user cancelled the Facebook login.");
+            NSLog(@"Error is %@", [error localizedDescription]);
+            [SVProgressHUD showErrorWithStatus:@"Facebook login failed."];
         } else {
-            [SVProgressHUD showErrorWithStatus:@"Invalid Credentials"];
-            UIAlertView *alert = [self.alertProvider alertViewWithTitle:@"Cannot Login" message:@"Invalid Credentials."];
-            [alert show];
+            [SVProgressHUD dismiss];
+            [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+            NSLog(@"User logged in through Facebook!");
         }
     }];
 }

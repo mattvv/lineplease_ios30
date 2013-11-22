@@ -10,4 +10,6 @@
 
 @interface ScriptViewController : UIViewController
 
+
+- (IBAction)logout:(id)sender;
 @end

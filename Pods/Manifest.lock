@@ -1,6 +1,7 @@
 PODS:
   - Expecta (0.2.2)
-  - Facebook-iOS-SDK (3.9.0)
+  - Facebook-iOS-SDK (3.10.0)
+  - HTAutocompleteTextField (1.2.6)
   - OCMock (2.2.1)
   - Parse (1.2.15):
     - Facebook-iOS-SDK (~> 3.7)
@@ -10,6 +11,7 @@ PODS:
 
 DEPENDENCIES:
   - Expecta
+  - HTAutocompleteTextField
   - OCMock
   - Parse
   - Specta (from `https://github.com/mattvv/specta.git`, branch `xctest_integration`)
@@ -23,7 +25,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Expecta: 99adbb2e366a02796477523bfd426143350d9caf
-  Facebook-iOS-SDK: 5e1416dbdfc17b2620c2ca31c02e6feec042f2c1
+  Facebook-iOS-SDK: ef402579aeb30cf0c4a6370fb0a927e3dc3059e5
+  HTAutocompleteTextField: 984cfc05a2dc8906ad5ce560f3a4c7a1bbf51b2f
   OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   Parse: 200f5d714e38ed4c74e93d159e6fabaf2ab8d914
   Specta: 82746c6fd70b104c5d37cfbadb7bf15a2cbc4da0

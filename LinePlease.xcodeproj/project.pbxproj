@@ -13,6 +13,11 @@
 		B24A4CEE17FFCDA500304FD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
 		B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28A7A79183DD33000169BDE /* AudioToolbox.framework */; };
 		B28A7A7B183DD33500169BDE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
+		B28A7A83183F1DF700169BDE /* EmailLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28A7A82183F1DF700169BDE /* EmailLoginViewController.m */; };
+		B28A7A85183F29C900169BDE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28A7A84183F29C900169BDE /* QuartzCore.framework */; };
+		B28A7A88183F2A0C00169BDE /* StyleHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B28A7A87183F2A0C00169BDE /* StyleHelper.m */; };
+		B28A7A8B183F30A600169BDE /* HTAutocompleteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B28A7A8A183F30A600169BDE /* HTAutocompleteManager.m */; };
+		B28A7A8E183F31B800169BDE /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28A7A8D183F31B800169BDE /* SignupViewController.m */; };
 		B28C00BC17FE6043004A31D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BB17FE6043004A31D9 /* Foundation.framework */; };
 		B28C00BE17FE6043004A31D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BD17FE6043004A31D9 /* CoreGraphics.framework */; };
 		B28C00C017FE6043004A31D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28C00BF17FE6043004A31D9 /* UIKit.framework */; };
@@ -57,6 +62,15 @@
 		B24A4CEB17FFCD9100304FD6 /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B28A7A79183DD33000169BDE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B28A7A81183F1DF700169BDE /* EmailLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailLoginViewController.h; sourceTree = "<group>"; };
+		B28A7A82183F1DF700169BDE /* EmailLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailLoginViewController.m; sourceTree = "<group>"; };
+		B28A7A84183F29C900169BDE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B28A7A86183F2A0C00169BDE /* StyleHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyleHelper.h; path = Utils/StyleHelper.h; sourceTree = "<group>"; };
+		B28A7A87183F2A0C00169BDE /* StyleHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StyleHelper.m; path = Utils/StyleHelper.m; sourceTree = "<group>"; };
+		B28A7A89183F30A600169BDE /* HTAutocompleteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTAutocompleteManager.h; path = Utils/HTAutocompleteManager.h; sourceTree = "<group>"; };
+		B28A7A8A183F30A600169BDE /* HTAutocompleteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTAutocompleteManager.m; path = Utils/HTAutocompleteManager.m; sourceTree = "<group>"; };
+		B28A7A8C183F31B800169BDE /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		B28A7A8D183F31B800169BDE /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		B28C00B817FE6043004A31D9 /* LinePlease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinePlease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28C00BB17FE6043004A31D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B28C00BD17FE6043004A31D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28A7A85183F29C900169BDE /* QuartzCore.framework in Frameworks */,
 				B28A7A7B183DD33500169BDE /* AVFoundation.framework in Frameworks */,
 				B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */,
 				B28C00BE17FE6043004A31D9 /* CoreGraphics.framework in Frameworks */,
@@ -121,6 +136,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B28A7A80183F1DD500169BDE /* Outside */ = {
+			isa = PBXGroup;
+			children = (
+				B28C00D317FE6043004A31D9 /* LoginViewController.h */,
+				B28C00D417FE6043004A31D9 /* LoginViewController.m */,
+				B28A7A81183F1DF700169BDE /* EmailLoginViewController.h */,
+				B28A7A82183F1DF700169BDE /* EmailLoginViewController.m */,
+				B28A7A8C183F31B800169BDE /* SignupViewController.h */,
+				B28A7A8D183F31B800169BDE /* SignupViewController.m */,
+			);
+			name = Outside;
+			sourceTree = "<group>";
+		};
 		B28C00AF17FE6043004A31D9 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +173,7 @@
 		B28C00BA17FE6043004A31D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B28A7A84183F29C900169BDE /* QuartzCore.framework */,
 				B28A7A79183DD33000169BDE /* AudioToolbox.framework */,
 				B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */,
 				B28C00BB17FE6043004A31D9 /* Foundation.framework */,
@@ -160,14 +189,13 @@
 		B28C00C117FE6043004A31D9 /* LinePlease */ = {
 			isa = PBXGroup;
 			children = (
+				B28A7A80183F1DD500169BDE /* Outside */,
 				B2C8896C17FE7FC900C66707 /* Utils */,
 				B28C00F317FE6295004A31D9 /* Models */,
 				B28C00CA17FE6043004A31D9 /* AppDelegate.h */,
 				B28C00CB17FE6043004A31D9 /* AppDelegate.m */,
 				B28C00CD17FE6043004A31D9 /* Main_iPhone.storyboard */,
 				B28C00D017FE6043004A31D9 /* Main_iPad.storyboard */,
-				B28C00D317FE6043004A31D9 /* LoginViewController.h */,
-				B28C00D417FE6043004A31D9 /* LoginViewController.m */,
 				B28C00D617FE6043004A31D9 /* Images.xcassets */,
 				B28C00C217FE6043004A31D9 /* Supporting Files */,
 				B2C8897117FE9B1600C66707 /* ScriptViewController.h */,
@@ -226,6 +254,10 @@
 			children = (
 				B2C8896D17FE7FEB00C66707 /* AlertViewProvider.h */,
 				B2C8896E17FE7FEB00C66707 /* AlertViewProvider.m */,
+				B28A7A86183F2A0C00169BDE /* StyleHelper.h */,
+				B28A7A87183F2A0C00169BDE /* StyleHelper.m */,
+				B28A7A89183F30A600169BDE /* HTAutocompleteManager.h */,
+				B28A7A8A183F30A600169BDE /* HTAutocompleteManager.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -401,8 +433,12 @@
 				B28C00D517FE6043004A31D9 /* LoginViewController.m in Sources */,
 				B28C00F617FE62DE004A31D9 /* Line.m in Sources */,
 				B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */,
+				B28A7A8E183F31B800169BDE /* SignupViewController.m in Sources */,
+				B28A7A88183F2A0C00169BDE /* StyleHelper.m in Sources */,
+				B28A7A83183F1DF700169BDE /* EmailLoginViewController.m in Sources */,
 				B28C010217FE670B004A31D9 /* User.m in Sources */,
 				B28C00CC17FE6043004A31D9 /* AppDelegate.m in Sources */,
+				B28A7A8B183F30A600169BDE /* HTAutocompleteManager.m in Sources */,
 				B28C00FE17FE66F5004A31D9 /* Script.m in Sources */,
 				B2C8897317FE9B1600C66707 /* ScriptViewController.m in Sources */,
 				B2C8896F17FE7FEB00C66707 /* AlertViewProvider.m in Sources */,
