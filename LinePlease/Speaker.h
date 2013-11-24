@@ -18,10 +18,11 @@
 @end
 
 
-@interface Speaker : NSObject<AVSpeechSynthesizerDelegate>
+@interface Speaker : NSObject<AVSpeechSynthesizerDelegate, AVAudioPlayerDelegate>
 
 @property (nonatomic, retain) AVSpeechSynthesizer *speaker;
 @property (nonatomic, strong) id <SpeakerDelegate> delegate;
+@property (nonatomic, strong) AVAudioPlayer *player;
 
 - (void) startSpeaking:(NSArray *)chosenLines withCharacter:(NSString *)chosenCharacter;
 - (void) pauseSpeaking;

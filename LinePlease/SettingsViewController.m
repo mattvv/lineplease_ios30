@@ -21,6 +21,9 @@
 	// Do any additional setup after loading the view.
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults floatForKey:@"playbackSpeed"]) {
+        [userDefaults setFloat:0.15 forKey:@"playbackSpeed"];
+    }
     self.playbackSpeedSlider.value = [userDefaults floatForKey:@"playbackSpeed"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 }

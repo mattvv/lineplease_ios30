@@ -30,10 +30,6 @@
 }
 
 #pragma mark - types of speaking
-- (void)recordedLine:(Line*) line {
-    //nslog todo:
-}
-
 - (void)synthLine:(Line*) line {
     NSLog(@"Speaking %@", line[@"line"]);
     //setup male or female voice.
@@ -63,10 +59,41 @@
     });
 }
 
+- (void)recordedLine:(Line *)line {
+    NSString *documentDirectory = NSTemporaryDirectory();
+    NSString *path = [documentDirectory stringByAppendingString:[NSString stringWithFormat:@"%@.wav", line.objectId]];
+    NSData *recordingData;
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path isDirectory:NO]) {
+        recordingData = [NSData dataWithContentsOfFile:path];
+    } else {
+        PFFile *recording = line[@"recordingFile"];
+        recordingData = [recording getData];
+    }
+    
+    /* play the file */
+    
+    NSError *err;
+    
+    self.player = [[AVAudioPlayer alloc] initWithData:recordingData error: &err];
+    self.player.numberOfLoops = 0;
+    self.player.delegate = self;
+    
+    
+    @synchronized(self) {
+        playingAudio = YES;
+        [self.player prepareToPlay];
+        [self.player play];
+    }
+}
+
 - (void)playLine:(Line *) line {
     if ([[line cleanCharacter] isEqualToString:character]) {
         [self.delegate highlightLine:line silent:YES];
         [self speakSilence:line];
+    } else if ([line[@"recorded"] isEqualToString:@"yes"]) {
+        [self.delegate highlightLine:line silent:NO];
+        [self recordedLine:line];
     } else {
         [self.delegate highlightLine:line silent:NO];
         [self synthLine:line];
@@ -104,6 +131,18 @@
     }
 }
 
+#pragma mark - delegates for AVAudioPlayer
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
+    @synchronized(self) {
+        playingAudio = NO;
+        
+        if (!paused) {
+            [self playNextLine];
+        }
+    }
+}
+
 
 #pragma mark - control methods
 - (void) pauseSpeaking {
@@ -129,7 +168,13 @@
 }
 
 - (void) stopSpeaking {
-    [self.speaker stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+    @synchronized(self) {
+        if (playingSynth)
+            [self.speaker stopSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+        
+        if (playingAudio)
+            [self.player stop];
+    }
     
     lines = nil;
     character = nil;
