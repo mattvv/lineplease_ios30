@@ -10,6 +10,8 @@
 
 @interface AddScriptViewController : UIViewController
 
-- (IBAction)openMenu:(id)sender;
+@property (nonatomic, strong) IBOutlet UITextField *scriptName;
 
+- (IBAction)openMenu:(id)sender;
+- (IBAction)create:(id)sender;
 @end

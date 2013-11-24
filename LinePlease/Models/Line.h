@@ -13,4 +13,5 @@
 + (NSString *)parseClassName;
 - (NSString *)cleanCharacter;
 - (BOOL)isMale;
+- (double) calculateSilence;
 @end

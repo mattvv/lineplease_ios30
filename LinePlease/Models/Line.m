@@ -22,4 +22,25 @@
 - (BOOL)isMale {
     return [self[@"gender"] isEqualToString:@"male"];
 }
+
+- (double) calculateSilence {
+    NSScanner *scanner = [NSScanner scannerWithString:self[@"line"]];
+    NSCharacterSet *whiteSpace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    NSCharacterSet *nonWhitespace = [whiteSpace invertedSet];
+    float count = 0;
+    
+    while(![scanner isAtEnd])
+    {
+        [scanner scanUpToCharactersFromSet:nonWhitespace intoString:nil];
+        [scanner scanUpToCharactersFromSet:whiteSpace intoString:nil];
+        count++;
+    }
+    
+    
+    count = (count * 520) / 1000;
+    //todo: silence time.
+    
+    NSLog(@"Silence Time is %f", count);
+    return count; //to miliseconds
+}
 @end

@@ -39,6 +39,12 @@
     //setup male or female voice.
     
     AVSpeechUtterance *words = [AVSpeechUtterance speechUtteranceWithString:line[@"line"]];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults floatForKey:@"playbackSpeed"]) {
+        [userDefaults setFloat:0.15 forKey:@"playbackSpeed"];
+    }
+    
+    words.rate = [userDefaults floatForKey:@"playbackSpeed"];
     
     if ([line isMale]) {
         words.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-gb"];
@@ -50,15 +56,23 @@
     }
 }
 
+- (void)speakSilence:(Line *)line {
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, [line calculateSilence] * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self speechSynthesizer:self.speaker didFinishSpeechUtterance:nil];
+    });
+}
+
 - (void)playLine:(Line *) line {
     if ([[line cleanCharacter] isEqualToString:character]) {
         [self.delegate highlightLine:line silent:YES];
+        [self speakSilence:line];
     } else {
         [self.delegate highlightLine:line silent:NO];
+        [self synthLine:line];
     }
     
-    //todo: work out silence, synth line, etc.
-    [self synthLine:line];
+    //todo: play recorded lines
 }
 
 

@@ -10,6 +10,11 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (nonatomic, strong) IBOutlet UISlider *playbackSpeedSlider;
+@property (nonatomic, strong) IBOutlet UISlider *silenceSpeedSlider;
+
 - (IBAction)openMenu:(id)sender;
+- (IBAction)playbackSpeedChanged:(id)sender;
+- (IBAction)silenceSpeedChanged:(id)sender;
 
 @end

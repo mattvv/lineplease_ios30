@@ -19,11 +19,27 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.playbackSpeedSlider.value = [userDefaults floatForKey:@"playbackSpeed"];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 }
 
 - (IBAction)openMenu:(id)sender {
     LPNavigationController *nav = (LPNavigationController *)self.navigationController;
     [nav toggleMenu];
+}
+
+- (IBAction)playbackSpeedChanged:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    float value = self.playbackSpeedSlider.value;
+    [userDefaults setFloat:value forKey:@"playbackSpeed"];
+    
+}
+
+- (IBAction)silenceSpeedChanged:(id)sender {
+    
 }
 
 @end
