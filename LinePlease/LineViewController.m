@@ -188,6 +188,7 @@
 - (void)finishedSpeaking {
     //todo: finished speaking
     NSLog(@"Finished Speaking");
+    [self clearHighlighting];
     self.navigationItem.rightBarButtonItem.title = @"Rehearse";
     self.navigationItem.rightBarButtonItem.action = @selector(openPlayMenu:);
     self.navigationItem.leftBarButtonItem.title = @"Menu";
@@ -197,7 +198,6 @@
 #pragma mark - pause/stop actions
 - (void)stop:(id)sender {
     [self.speaker stopSpeaking];
-    [self clearHighlighting];
 }
 
 - (void)pause:(id)sender {

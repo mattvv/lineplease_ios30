@@ -13,5 +13,8 @@ pod 'HTAutocompleteTextField' #auto-complete for email address
 pod 'NSDate+TimeAgo'
 pod 'REMenu', :git => 'https://github.com/mattvv/REMenu.git'
 
+pod 'TestFlightSDK'
+pod 'TestFlightFeedback'
+
 #pod "Appirater" #in app reviews
 

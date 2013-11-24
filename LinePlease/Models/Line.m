@@ -18,4 +18,8 @@
 - (NSString *)cleanCharacter {
     return [[self[@"character"] uppercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
+
+- (BOOL)isMale {
+    return [self[@"gender"] isEqualToString:@"male"];
+}
 @end

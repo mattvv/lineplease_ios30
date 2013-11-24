@@ -12,5 +12,5 @@
 
 + (NSString *)parseClassName;
 - (NSString *)cleanCharacter;
-
+- (BOOL)isMale;
 @end

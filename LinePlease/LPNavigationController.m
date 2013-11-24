@@ -11,6 +11,8 @@
 #import "ProfileViewController.h"
 #import "SettingsViewController.h"
 #import "AddScriptViewController.h"
+#import "TestFlight.h"
+#import <TestFlight+OpenFeedback.h>
 
 @interface LPNavigationController () {
     BOOL showingMenu;
@@ -75,7 +77,14 @@
                                                              }
                                                          }];
     
-    self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem]];
+    REMenuItem *feedbackItem = [[REMenuItem alloc] initWithTitle:@"Feedback"
+                                                        subtitle:@"Found a bug? Send us feedback!"
+                                                           image:nil
+                                                highlightedImage:nil
+                                                          action:^(REMenuItem *item) {
+                                                            [TestFlight openFeedbackView];
+                                                          }];
+    self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem, feedbackItem]];
     [self themeMenu:self.menu];
     
     REMenuItem *scriptsItem = [[REMenuItem alloc] initWithTitle:@"Scripts"

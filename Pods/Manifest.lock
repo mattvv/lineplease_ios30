@@ -9,6 +9,12 @@ PODS:
   - REMenu (1.7)
   - Specta (0.1.11)
   - SVProgressHUD (0.9)
+  - TestFlightFeedback (2.0.0):
+    - TestFlightFeedback/Core
+    - TestFlightSDK (>= 2.0)
+  - TestFlightFeedback/Core (2.0.0):
+    - TestFlightSDK (>= 2.0)
+  - TestFlightSDK (2.1.1-beta)
   - TPKeyboardAvoiding (1.2.1)
 
 DEPENDENCIES:
@@ -20,6 +26,8 @@ DEPENDENCIES:
   - REMenu (from `https://github.com/mattvv/REMenu.git`)
   - Specta (from `https://github.com/mattvv/specta.git`, branch `xctest_integration`)
   - SVProgressHUD
+  - TestFlightFeedback
+  - TestFlightSDK
   - TPKeyboardAvoiding
 
 EXTERNAL SOURCES:
@@ -39,6 +47,8 @@ SPEC CHECKSUMS:
   REMenu: f9fb696fcc2f4a64511ffc99e251738f0ab6b945
   Specta: 82746c6fd70b104c5d37cfbadb7bf15a2cbc4da0
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
+  TestFlightFeedback: 2c96a2f4975c396ad6d72572909c26e1be92c18f
+  TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0
   TPKeyboardAvoiding: 0536c563e6c8b8e95a7c4bf87fca9c0991f5e826
 
 COCOAPODS: 0.28.0

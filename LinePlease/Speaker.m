@@ -40,6 +40,10 @@
     
     AVSpeechUtterance *words = [AVSpeechUtterance speechUtteranceWithString:line[@"line"]];
     
+    if ([line isMale]) {
+        words.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-gb"];
+    }
+    
     @synchronized(self) {
         playingSynth = YES;
         [self.speaker speakUtterance:words];
