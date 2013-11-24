@@ -219,6 +219,9 @@
     }
     self.containerView.frame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     self.backgroundButton.frame = self.containerView.bounds;
+
+    self.containerView.contentSize = CGSizeMake(self.menuWrapperView.frame.size.width, self.menuWrapperView.frame.size.height - 40);
+    self.containerView.bounces = NO;
     
     // Add subviews
     //

@@ -11,5 +11,6 @@
 @interface Line : PFObject<PFSubclassing>
 
 + (NSString *)parseClassName;
+- (NSString *)cleanCharacter;
 
 @end

@@ -13,6 +13,7 @@
 		B21E20941841D6750090AE1C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20931841D6750090AE1C /* SettingsViewController.m */; };
 		B21E20971841D79D0090AE1C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20961841D79D0090AE1C /* ProfileViewController.m */; };
 		B21E209A1841E6520090AE1C /* AddScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20991841E6520090AE1C /* AddScriptViewController.m */; };
+		B21E209E184285600090AE1C /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E209D184285600090AE1C /* Speaker.m */; };
 		B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A4CEB17FFCD9100304FD6 /* LineViewController.m */; };
 		B24A4CEE17FFCDA500304FD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
 		B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28A7A79183DD33000169BDE /* AudioToolbox.framework */; };
@@ -70,6 +71,8 @@
 		B21E20961841D79D0090AE1C /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B21E20981841E6520090AE1C /* AddScriptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddScriptViewController.h; sourceTree = "<group>"; };
 		B21E20991841E6520090AE1C /* AddScriptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddScriptViewController.m; sourceTree = "<group>"; };
+		B21E209C184285600090AE1C /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
+		B21E209D184285600090AE1C /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
 		B24A4CEA17FFCD9100304FD6 /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
 		B24A4CEB17FFCD9100304FD6 /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +160,15 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		B21E209B184285500090AE1C /* Speaker */ = {
+			isa = PBXGroup;
+			children = (
+				B21E209C184285600090AE1C /* Speaker.h */,
+				B21E209D184285600090AE1C /* Speaker.m */,
+			);
+			name = Speaker;
+			sourceTree = "<group>";
+		};
 		B28A7A80183F1DD500169BDE /* Outside */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +222,7 @@
 		B28C00C117FE6043004A31D9 /* LinePlease */ = {
 			isa = PBXGroup;
 			children = (
+				B21E209B184285500090AE1C /* Speaker */,
 				B21E20851841A1650090AE1C /* Menu */,
 				B28A7A80183F1DD500169BDE /* Outside */,
 				B2C8896C17FE7FC900C66707 /* Utils */,
@@ -475,6 +488,7 @@
 				B21E20941841D6750090AE1C /* SettingsViewController.m in Sources */,
 				B2C8896F17FE7FEB00C66707 /* AlertViewProvider.m in Sources */,
 				B28C00C817FE6043004A31D9 /* main.m in Sources */,
+				B21E209E184285600090AE1C /* Speaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

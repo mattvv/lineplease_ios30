@@ -12,6 +12,8 @@
 	<dict>
 		<key>C8EA8808-12E6-4D60-A4B3-1523B26F3D86</key>
 		<string>ssh://github.com/mattvv/lineplease_ios30.git</string>
+		<key>D212FE6F-5941-4B83-985B-C88A4D9A8944</key>
+		<string>ssh://github.com/mattvv/REMenu.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LinePlease.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>C8EA8808-12E6-4D60-A4B3-1523B26F3D86</key>
 		<string>..</string>
+		<key>D212FE6F-5941-4B83-985B-C88A4D9A8944</key>
+		<string>../../../../REMenu</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://github.com/mattvv/lineplease_ios30.git</string>
@@ -35,6 +39,14 @@
 			<string>C8EA8808-12E6-4D60-A4B3-1523B26F3D86</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LinePlease</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D212FE6F-5941-4B83-985B-C88A4D9A8944</string>
+			<key>IDESourceControlWCCName</key>
+			<string>REMenu</string>
 		</dict>
 	</array>
 </dict>

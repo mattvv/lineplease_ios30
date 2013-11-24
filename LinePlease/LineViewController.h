@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
 #import "Script.h"
+#import "Speaker.h"
 
-@interface LineViewController : PFQueryTableViewController<AVSpeechSynthesizerDelegate>
+@interface LineViewController : PFQueryTableViewController<SpeakerDelegate>
 
 @property (nonatomic, strong) Script *script;
-@property (nonatomic, retain) AVSpeechSynthesizer *speaker;
+@property (nonatomic, strong) Speaker *speaker;
 
 - (IBAction)openMenu:(id)sender;
 

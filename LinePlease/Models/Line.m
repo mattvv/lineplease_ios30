@@ -15,4 +15,7 @@
     return @"Line";
 }
 
+- (NSString *)cleanCharacter {
+    return [[self[@"character"] uppercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
 @end

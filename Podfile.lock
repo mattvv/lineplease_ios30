@@ -17,12 +17,14 @@ DEPENDENCIES:
   - NSDate+TimeAgo
   - OCMock
   - Parse
-  - REMenu (~> 1.7)
+  - REMenu (from `https://github.com/mattvv/REMenu.git`)
   - Specta (from `https://github.com/mattvv/specta.git`, branch `xctest_integration`)
   - SVProgressHUD
   - TPKeyboardAvoiding
 
 EXTERNAL SOURCES:
+  REMenu:
+    :git: https://github.com/mattvv/REMenu.git
   Specta:
     :branch: xctest_integration
     :git: https://github.com/mattvv/specta.git

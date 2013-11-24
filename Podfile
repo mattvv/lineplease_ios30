@@ -11,7 +11,7 @@ pod 'SVProgressHUD'
 pod 'TPKeyboardAvoiding'
 pod 'HTAutocompleteTextField' #auto-complete for email address
 pod 'NSDate+TimeAgo'
-pod 'REMenu', '~> 1.7' #main navigation menu
+pod 'REMenu', :git => 'https://github.com/mattvv/REMenu.git'
 
 #pod "Appirater" #in app reviews
 

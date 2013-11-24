@@ -28,6 +28,8 @@
         self.pullToRefreshEnabled = YES;
         self.paginationEnabled = NO;
         self.objectsPerPage = 2000;
+        self.speaker = [[Speaker alloc] init];
+        self.speaker.delegate = self;
     }
     return self;
 }
@@ -36,8 +38,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.speaker = [[AVSpeechSynthesizer alloc] init];
-    [self.speaker setDelegate:self];
     self.title = self.script[@"name"];
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
@@ -46,12 +46,6 @@
 - (IBAction)openMenu:(id)sender {
     LPNavigationController *nav = (LPNavigationController *)self.navigationController;
     [nav toggleLinesMenu];
-}
-
-- (IBAction)speakHelloWorld:(id)sender {
-    NSLog(@"Speaking words");
-    AVSpeechUtterance *words = [AVSpeechUtterance speechUtteranceWithString:@"Hello World! Testing new Line Please Voice"];
-    [self.speaker speakUtterance:words];
 }
 
 - (IBAction)openPlayMenu:(UIBarButtonItem *)sender {
@@ -84,6 +78,19 @@
     if ([character isEqualToString:@"Play All"]) {
         
     }
+    
+    [self.speaker startSpeaking:self.objects withCharacter:character];
+    
+    //setup the barbutton items
+//    self.navigationItem.leftBarButtonItem.title = @"Pause";
+//    self.navigationItem.leftBarButtonItem.action = @selector(pause:);
+    self.navigationItem.rightBarButtonItem.title = @"Stop";
+    self.navigationItem.rightBarButtonItem.action = @selector(stop:);
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    [self.speaker stopSpeaking];
+    [super viewDidDisappear:animated];
 }
 
 #pragma mark - Parse
@@ -144,16 +151,65 @@
 - (NSMutableArray *) getCharacters {
     NSMutableArray * characters = [[NSMutableArray alloc] init];
     for (Line* line in self.objects) {
-        NSString *characterName = [[line[@"character"] uppercaseString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString *characterName = [line cleanCharacter];
         if (![characters containsObject:characterName])
             [characters addObject:characterName];
     }
     return (NSMutableArray *)characters;
 }
 
+#pragma mark - speaker delegate
+- (void)clearHighlighting {
+    for (int j = 0; j < [self.objects count]; j++)
+    {
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:j inSection:0];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        [cell.textLabel setTextColor:[UIColor blackColor]];
+    }
+}
 
+- (void)highlightLine:(Line *)line silent:(BOOL)silent {
+    //todo: highlight lines based on whats speaking!
+    [self clearHighlighting];
+    
+    NSUInteger row = [self.objects indexOfObject:line];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    PFTableViewCell *cell = (PFTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    if (silent)
+        cell.textLabel.textColor = [UIColor redColor];
+    else
+        cell.textLabel.textColor = [UIColor blueColor];
+    //todo: highlight the row.
+}
 
+- (void)finishedSpeaking {
+    //todo: finished speaking
+    NSLog(@"Finished Speaking");
+    self.navigationItem.rightBarButtonItem.title = @"Rehearse";
+    self.navigationItem.rightBarButtonItem.action = @selector(openPlayMenu:);
+    self.navigationItem.leftBarButtonItem.title = @"Menu";
+    self.navigationItem.leftBarButtonItem.action = @selector(openMenu:);
+}
 
+#pragma mark - pause/stop actions
+- (void)stop:(id)sender {
+    [self.speaker stopSpeaking];
+    [self clearHighlighting];
+}
 
+- (void)pause:(id)sender {
+    [self.speaker pauseSpeaking];
+    self.navigationItem.leftBarButtonItem.title = @"Resume";
+    self.navigationItem.leftBarButtonItem.action = @selector(unpause:);
+    
+}
+- (void)unpause:(id)sender {
+    [self.speaker unpauseSpeaking];
+    self.navigationItem.leftBarButtonItem.title = @"Pause";
+    self.navigationItem.leftBarButtonItem.action = @selector(pause:);
+}
 
 @end
