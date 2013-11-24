@@ -1,0 +1,161 @@
+//
+//  LPViewController.m
+//  LinePlease
+//
+//  Created by Matt Van Veenendaal on 11/23/13.
+//  Copyright (c) 2013 lineplease. All rights reserved.
+//
+
+#import "LPNavigationController.h"
+#import "ScriptViewController.h"
+#import "ProfileViewController.h"
+#import "SettingsViewController.h"
+#import "AddScriptViewController.h"
+
+@interface LPNavigationController () {
+    BOOL showingMenu;
+}
+@end
+
+@implementation LPNavigationController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    REMenuItem *addScriptItem = [[REMenuItem alloc] initWithTitle:@"Create Script"
+                                                    subtitle:@"Create a new script"
+                                                       image:[UIImage imageNamed:@"menu_add_script"]
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          if ([self.visibleViewController isKindOfClass:[ScriptViewController class]]) {
+                                                              [self.visibleViewController performSegueWithIdentifier:@"AddScript" sender:self];
+                                                          } else if (![self.visibleViewController isKindOfClass:[AddScriptViewController class]]) {
+                                                              [self popViewControllerAnimated:NO];
+                                                              [self.visibleViewController performSegueWithIdentifier:@"AddScript" sender:self];
+                                                          }
+                                                          showingMenu = NO;
+                                                      }];
+    
+    REMenuItem *homeItem = [[REMenuItem alloc] initWithTitle:@"Scripts"
+                                                    subtitle:@"View your Scripts"
+                                                       image:[UIImage imageNamed:@"menu_scripts"]
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          if (![self.visibleViewController isKindOfClass:[ScriptViewController class]]) {
+                                                              [self popToRootViewControllerAnimated:NO];
+                                                          }
+                                                          showingMenu = NO;
+                                                      }];
+    REMenuItem *profileItem = [[REMenuItem alloc] initWithTitle:@"Profile"
+                                                    subtitle:@"Edit your profile"
+                                                       image:[UIImage imageNamed:@"menu_profile"]
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          if ([self.visibleViewController isKindOfClass:[ScriptViewController class]]) {
+                                                              [self.visibleViewController performSegueWithIdentifier:@"Profile" sender:self];
+                                                          } else if (![self.visibleViewController isKindOfClass:[ProfileViewController class]]) {
+                                                              [self popViewControllerAnimated:NO];
+                                                              [self.visibleViewController performSegueWithIdentifier:@"Profile" sender:self];
+                                                          }
+                                                          showingMenu = NO;
+                                                      }];
+    
+    REMenuItem *settingsItem = [[REMenuItem alloc] initWithTitle:@"Settings"
+                                                       subtitle:@"Adjust playback speed, pause time"
+                                                          image:[UIImage imageNamed:@"menu_settings"]
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             showingMenu = NO;
+                                                             if ([self.visibleViewController isKindOfClass:[ScriptViewController class]]) {
+                                                                 [self.visibleViewController performSegueWithIdentifier:@"Settings" sender:self];
+                                                             } else if (![self.visibleViewController isKindOfClass:[SettingsViewController class]]) {
+                                                                 [self popViewControllerAnimated:NO];
+                                                                 [self.visibleViewController performSegueWithIdentifier:@"Settings" sender:self];
+                                                             }
+                                                         }];
+    
+    self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem]];
+    [self themeMenu:self.menu];
+    
+    REMenuItem *scriptsItem = [[REMenuItem alloc] initWithTitle:@"Scripts"
+                                                    subtitle:@"View your Scripts"
+                                                       image:[UIImage imageNamed:@"menu_scripts"]
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          [self popViewControllerAnimated:YES];
+                                                      }];
+    
+    REMenuItem *addlineItem = [[REMenuItem alloc] initWithTitle:@"Add Line"
+                                                       subtitle:@"Create a new Line"
+                                                          image:[UIImage imageNamed:@"menu_add_line"]
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             [self popViewControllerAnimated:YES];
+                                                         }];
+    
+    self.linesMenu = [[REMenu alloc] initWithItems:@[scriptsItem,addlineItem]];
+    [self themeMenu:self.linesMenu];
+
+}
+
+- (void) toggleMenu {
+    if (!showingMenu) {
+        [self.menu showFromNavigationController:self];
+        showingMenu = YES;
+        return;
+    }
+    
+    [self.menu closeWithCompletion:^{
+        showingMenu = NO;
+    }];
+}
+
+- (void) toggleLinesMenu {
+    if (self.characterMenu) {
+        [self.characterMenu close];
+    }
+    
+    if (!showingMenu) {
+        [self.linesMenu showFromNavigationController:self];
+        showingMenu = YES;
+        return;
+    }
+    
+    [self.linesMenu closeWithCompletion:^{
+        showingMenu = NO;
+    }];
+}
+
+- (IBAction)logout:(id)sender {
+    [User logOut];
+    [self popToRootViewControllerAnimated:YES];
+}
+
+- (void) themeMenu:(REMenu *)menu {
+    //theme menu
+    menu.backgroundColor = [UIColor colorWithRed:0.9f green:0.9f blue:0.9f alpha:1.0f];
+    
+    menu.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+    menu.textShadowColor = [UIColor clearColor];
+    menu.textColor = [UIColor blackColor];
+    menu.separatorColor = [UIColor clearColor];
+    
+    menu.subtitleFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:12];
+    menu.subtitleTextShadowColor = [UIColor clearColor];
+    menu.borderWidth = 0;
+}
+
+- (void) displayCharacterMenu:(NSMutableArray *)menuItems {
+    if (self.characterMenu) {
+        [self.characterMenu close];
+    }
+    [self.linesMenu closeWithCompletion:^{
+        showingMenu = NO;
+    }];
+    self.characterMenu = nil; //de-allocate the previous menu.
+    self.characterMenu = [[REMenu alloc] initWithItems:menuItems];
+    [self themeMenu:self.characterMenu];
+    [self.characterMenu showFromNavigationController:self];
+}
+@end

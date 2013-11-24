@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "Script.h"
 
-@interface LineViewController : UIViewController<AVSpeechSynthesizerDelegate>
+@interface LineViewController : PFQueryTableViewController<AVSpeechSynthesizerDelegate>
 
+@property (nonatomic, strong) Script *script;
 @property (nonatomic, retain) AVSpeechSynthesizer *speaker;
+
+- (IBAction)openMenu:(id)sender;
 
 @end

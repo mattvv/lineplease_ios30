@@ -7,7 +7,7 @@
         <!--Navigation Controller-->
         <scene sceneID="1fT-G7-JGP">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Xpr-5c-yS3" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="Xpr-5c-yS3" customClass="LPNavigationController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0C1-NK-Cwe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIT-1v-zY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-328" y="165"/>
+            <point key="canvasLocation" x="-1181" y="337"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -109,45 +109,12 @@
                     <navigationItem key="navigationItem" id="BRA-OH-sCG"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <segue destination="pWl-14-bmT" kind="push" identifier="LoggedIn" id="1lA-tk-STo"/>
+                        <segue destination="X0P-eD-ZRz" kind="push" identifier="Scripts" id="oka-Vr-AdY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="170" y="165"/>
-        </scene>
-        <!--Line View Controller - Script X-->
-        <scene sceneID="S9r-AU-cYp">
-            <objects>
-                <viewController id="yBZ-aL-4V5" customClass="LineViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WIR-UP-7oe"/>
-                        <viewControllerLayoutGuide type="bottom" id="hqN-6p-29k"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="L7C-MJ-Fp3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3U-aj-t45">
-                                <rect key="frame" x="113" y="269" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Say Hello World">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="speakHelloWorld:" destination="yBZ-aL-4V5" eventType="touchUpInside" id="Pid-XP-Hg3"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Script X" id="jcp-n1-b49">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Yfe-XI-hnH"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Fd-P4-3bw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1443" y="637"/>
+            <point key="canvasLocation" x="-650" y="-135"/>
         </scene>
         <!--Email Login View Controller-->
         <scene sceneID="9Fn-RG-605">
@@ -243,45 +210,185 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jad-v6-D0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="-129"/>
+            <point key="canvasLocation" x="427" y="-1021"/>
         </scene>
-        <!--Script View Controller - Scripts-->
-        <scene sceneID="cdk-sE-lbl">
+        <!--Add Script View Controller - Create Script-->
+        <scene sceneID="voI-lF-cOF">
             <objects>
-                <viewController id="pWl-14-bmT" customClass="ScriptViewController" sceneMemberID="viewController">
+                <viewController id="eph-sB-zLB" customClass="AddScriptViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fSK-An-SYY"/>
-                        <viewControllerLayoutGuide type="bottom" id="x9C-Df-kqJ"/>
+                        <viewControllerLayoutGuide type="top" id="y8v-xF-32z"/>
+                        <viewControllerLayoutGuide type="bottom" id="5cV-nl-u0U"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6LE-Wo-htc">
+                    <view key="view" contentMode="scaleToFill" id="cKf-nt-mQp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Script" id="F20-Pp-03c">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="r5Q-tm-SUD">
+                            <connections>
+                                <action selector="openMenu:" destination="eph-sB-zLB" id="Sib-i9-v4r"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQF-Kr-1MV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-1463"/>
+        </scene>
+        <!--Profile View Controller - Profile-->
+        <scene sceneID="Nb0-JY-m69">
+            <objects>
+                <viewController id="kU3-9c-v3S" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4uH-MX-6gl"/>
+                        <viewControllerLayoutGuide type="bottom" id="vSR-S4-kRN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iAV-Lx-Z7E">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pe6-OH-EhZ">
-                                <rect key="frame" x="137" y="269" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DpR-pD-9Eu">
+                                <rect key="frame" x="20" y="85" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Lines">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Sign out">
+                                            <attributes>
+                                                <color key="NSColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="16" name="HelveticaNeue-Thin"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="yBZ-aL-4V5" kind="push" id="gHk-hf-zSK"/>
+                                    <action selector="signOut:" destination="kU3-9c-v3S" eventType="touchUpInside" id="d4g-U3-UZl"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scripts" id="eOe-et-4Yi">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ptV-Oz-fbR">
+                    <navigationItem key="navigationItem" title="Profile" id="o1S-gH-xc5">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="xZG-KL-thn">
                             <connections>
-                                <action selector="logout:" destination="pWl-14-bmT" id="U4N-2I-ogk"/>
+                                <action selector="openMenu:" destination="kU3-9c-v3S" id="AKu-aW-vZZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ywP-sa-a2Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-796"/>
+        </scene>
+        <!--Settings View Controller - Settings-->
+        <scene sceneID="agL-PL-ebz">
+            <objects>
+                <viewController id="Luj-u4-G7K" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b2p-t0-2EH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vs8-ON-MWi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xqj-3d-Tsh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="a7T-ld-hYK">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="f3D-E8-Sl4">
+                            <connections>
+                                <action selector="openMenu:" destination="Luj-u4-G7K" id="Ygo-pb-fdP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="84u-uJ-Uwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="-135"/>
+        </scene>
+        <!--Script View Controller - Scripts-->
+        <scene sceneID="2qR-Ec-NgZ">
+            <objects>
+                <tableViewController id="X0P-eD-ZRz" customClass="ScriptViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tkk-ns-jyD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UAn-6p-fTX">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UAn-6p-fTX" id="wyX-V9-Xor">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="X0P-eD-ZRz" id="9fL-t7-EyS"/>
+                            <outlet property="delegate" destination="X0P-eD-ZRz" id="3O3-9S-fLn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scripts" id="3jv-es-grl">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="FI3-v9-LEI">
+                            <connections>
+                                <action selector="openMenu:" destination="X0P-eD-ZRz" id="hkD-qa-nVJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zhU-Fa-Sx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    <connections>
+                        <segue destination="3NI-T7-nh7" kind="push" identifier="lines" id="1Ab-WH-VOd"/>
+                        <segue destination="Luj-u4-G7K" kind="push" identifier="Settings" id="GQ6-A7-NM1"/>
+                        <segue destination="kU3-9c-v3S" kind="push" identifier="Profile" id="08p-VE-JPg"/>
+                        <segue destination="eph-sB-zLB" kind="push" identifier="AddScript" id="m2f-vA-DFe"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2w-UO-3Ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="653"/>
+            <point key="canvasLocation" x="791" y="569"/>
+        </scene>
+        <!--Line View Controller - Title-->
+        <scene sceneID="ewQ-Rp-087">
+            <objects>
+                <tableViewController id="3NI-T7-nh7" customClass="LineViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dhL-86-kCg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="GL2-h5-PXD">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GL2-h5-PXD" id="TFk-b8-wUb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3NI-T7-nh7" id="NWw-go-WaZ"/>
+                            <outlet property="delegate" destination="3NI-T7-nh7" id="Dj4-IU-cL9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="6xA-fV-OaR">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="gBQ-1J-yX4">
+                            <connections>
+                                <action selector="openMenu:" destination="3NI-T7-nh7" id="B96-xm-dpo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Rehearse" id="0wL-5U-DSt">
+                            <connections>
+                                <action selector="openPlayMenu:" destination="3NI-T7-nh7" id="6P8-mN-UKw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYL-KK-8i0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="569"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="G2g-wQ-Kse">
@@ -363,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdi-Mn-U5V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791" y="-881"/>
+            <point key="canvasLocation" x="-229" y="-1021"/>
         </scene>
     </scenes>
     <resources>

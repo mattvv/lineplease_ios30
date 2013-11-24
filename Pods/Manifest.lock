@@ -2,9 +2,11 @@ PODS:
   - Expecta (0.2.2)
   - Facebook-iOS-SDK (3.10.0)
   - HTAutocompleteTextField (1.2.6)
+  - NSDate+TimeAgo (1.0.2)
   - OCMock (2.2.1)
   - Parse (1.2.15):
     - Facebook-iOS-SDK (~> 3.7)
+  - REMenu (1.7)
   - Specta (0.1.11)
   - SVProgressHUD (0.9)
   - TPKeyboardAvoiding (1.2.1)
@@ -12,8 +14,10 @@ PODS:
 DEPENDENCIES:
   - Expecta
   - HTAutocompleteTextField
+  - NSDate+TimeAgo
   - OCMock
   - Parse
+  - REMenu (~> 1.7)
   - Specta (from `https://github.com/mattvv/specta.git`, branch `xctest_integration`)
   - SVProgressHUD
   - TPKeyboardAvoiding
@@ -27,8 +31,10 @@ SPEC CHECKSUMS:
   Expecta: 99adbb2e366a02796477523bfd426143350d9caf
   Facebook-iOS-SDK: ef402579aeb30cf0c4a6370fb0a927e3dc3059e5
   HTAutocompleteTextField: 984cfc05a2dc8906ad5ce560f3a4c7a1bbf51b2f
+  NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   Parse: 200f5d714e38ed4c74e93d159e6fabaf2ab8d914
+  REMenu: f9fb696fcc2f4a64511ffc99e251738f0ab6b945
   Specta: 82746c6fd70b104c5d37cfbadb7bf15a2cbc4da0
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
   TPKeyboardAvoiding: 0536c563e6c8b8e95a7c4bf87fca9c0991f5e826

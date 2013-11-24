@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Script.h"
 
-@interface ScriptViewController : UIViewController
+@interface ScriptViewController : PFQueryTableViewController
 
+- (IBAction)openMenu:(id)sender;
 
-- (IBAction)logout:(id)sender;
 @end

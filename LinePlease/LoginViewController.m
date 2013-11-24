@@ -24,7 +24,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:animated];
     if ([User currentUser]) {
         //we have a current user so lets move on
-        [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+        [self performSegueWithIdentifier:@"Scripts" sender:self];
     }
     [super viewWillAppear:animated];
 }
@@ -39,7 +39,7 @@
             [SVProgressHUD showErrorWithStatus:@"Facebook login failed."];
         } else {
             [SVProgressHUD dismiss];
-            [self performSegueWithIdentifier:@"LoggedIn" sender:self];
+            [self performSegueWithIdentifier:@"Scripts" sender:self];
             NSLog(@"User logged in through Facebook!");
         }
     }];
