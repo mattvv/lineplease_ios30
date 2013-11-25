@@ -31,6 +31,8 @@
     htm.characters = self.characters;
     self.characterText.autocompleteType = HTAutocompleteTypeCharacter;
     self.characterText.autocompleteDataSource = htm;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

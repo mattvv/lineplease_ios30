@@ -198,6 +198,9 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     //todo: update Parse with move
     [self stopDragging:self];
+    
+    //todo: run cloud code to change line positions.
+    
     //    NSInteger change = [fromIndexPath row] - [toIndexPath row];
     //    NSLog(@"Change is %i", change);
     

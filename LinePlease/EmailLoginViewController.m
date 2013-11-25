@@ -26,6 +26,8 @@
     [StyleHelper styleMyUITextField:self.passwordTextField];
     self.emailTextField.autocompleteDataSource = [HTAutocompleteManager sharedManager];
     self.emailTextField.autocompleteType = HTAutocompleteTypeEmail;
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [super viewDidLoad];
 }
 
@@ -34,6 +36,16 @@
 }
 
 - (IBAction)loginTapped:(id)sender {
+    if ([self.emailTextField.text length] == 0) {
+        [SVProgressHUD showErrorWithStatus:@"Please enter your Email/Username"];
+        return;
+    }
+    
+    if ([self.passwordTextField.text length] == 0) {
+        [SVProgressHUD showErrorWithStatus:@"Please enter your Password"];
+        return;
+    }
+    
     [SVProgressHUD showWithStatus:@"Signing in"];
     [self.user logInWithUsernameInBackground:self.emailTextField.text password:self.passwordTextField.text block:^(PFUser *user, NSError *error) {
         
