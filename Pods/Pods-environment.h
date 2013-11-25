@@ -48,6 +48,12 @@
 #define COCOAPODS_VERSION_MINOR_SWTableViewCell 1
 #define COCOAPODS_VERSION_PATCH_SWTableViewCell 4
 
+// SZTextView
+#define COCOAPODS_POD_AVAILABLE_SZTextView
+#define COCOAPODS_VERSION_MAJOR_SZTextView 1
+#define COCOAPODS_VERSION_MINOR_SZTextView 0
+#define COCOAPODS_VERSION_PATCH_SZTextView 2
+
 // TPKeyboardAvoiding
 #define COCOAPODS_POD_AVAILABLE_TPKeyboardAvoiding
 #define COCOAPODS_VERSION_MAJOR_TPKeyboardAvoiding 1

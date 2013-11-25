@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-LinePleaseTests-SZTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-LinePleaseTests-Specta.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -109,6 +114,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SZTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-TPKeyboardAvoiding.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -132,127 +142,137 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0BA5B9A07B1E41EEA344E65B</key>
+		<key>0D559ADF31434AADBEAD9648</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0D92583841EA46579DE0A5FF</key>
+		<key>0DA671B8B1404D078469746E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1725520885944FAAB6985776</key>
+		<key>148F8A8EC6E74B9E9233DE71</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B4C450DF2934F2C817C7053</key>
+		<key>156B08851E284C0F9D9D4E62</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2F8D9A897BA74D60848DAF39</key>
+		<key>17F71407C0C44BAEB29AABF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>33A0B4BDCC7A43E5BED10370</key>
+		<key>32EDCBD57E464A61B5A468BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3945AC7FA6314B77A1581FBB</key>
+		<key>4FC62A23FCAD4557BE61C606</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4274D5D02B0744F299295135</key>
+		<key>5630BB42FA2A4EB18243BC36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>46FD26C6B1FE4B5697B620A4</key>
+		<key>5E1C0BD15C524A0FBBB68B9A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EA49436081D4AF48D8C11D2</key>
+		<key>5E814505E81E44168A8079F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EA2FADDE23E48D7B9BB1D95</key>
+		<key>6C140621F12F4CE5A426D8C0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86EA57D389D14E809AA5AC7F</key>
+		<key>72869C54B6F24A068AD2081D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87241812F6E746EF965302FD</key>
+		<key>76935F14434C4413B0B1851A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8790FCA86F5C47D3BC2ED919</key>
+		<key>7B09C553E2434F0E9F73E6A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D53E49DFC0648248D67E5D7</key>
+		<key>7E8B40B6F845499EAF5C147E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AF572083416F46DFA1154849</key>
+		<key>86AD2F115CE54C1481D706E1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B95F232B12E34CD9860F4A7E</key>
+		<key>917CE39055BB4C9B926C0585</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC9F704D7B224F9CB2054D10</key>
+		<key>AADC5B0B945E417AB352EA36</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BCB44C2D4B194F95A6B691B7</key>
+		<key>AB331861BC0649628C4FE70E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD174C5ED0FA4326A0ACA6FF</key>
+		<key>B556A0D160A7409D954D37FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CEA01A5562834C929C26E593</key>
+		<key>B70660794616444C86F271B1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E18FE10AD2AE4EA1A945637B</key>
+		<key>CD5FD487B286423C96E41960</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBA731C94FE24116B9720C65</key>
+		<key>CFAFA548785F4F8FB857D1E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB688FEE9E374E82B4F8147B</key>
+		<key>D1F2379FEA6B47B5A5101AF3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FD6736050C6246B190836696</key>
+		<key>D5C1729C289044EE8117744F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FB1F466D0159416290FBF6F8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD264416912F4D77B253626F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

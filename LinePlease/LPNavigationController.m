@@ -100,7 +100,7 @@
                                                           image:[UIImage imageNamed:@"menu_add_line"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
-                                                             [self popViewControllerAnimated:YES];
+                                                             [self.visibleViewController performSegueWithIdentifier:@"createLine" sender:self];
                                                          }];
     
     self.linesMenu = [[REMenu alloc] initWithItems:@[scriptsItem,addlineItem]];

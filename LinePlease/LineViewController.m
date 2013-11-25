@@ -9,6 +9,7 @@
 #import "LineViewController.h"
 #import "Line.h"
 #import "LPNavigationController.h"
+#import "EditLineViewController.h"
 
 #define FONT_SIZE 17.0f
 
@@ -237,6 +238,15 @@
     [self.speaker unpauseSpeaking];
     self.navigationItem.leftBarButtonItem.title = @"Pause";
     self.navigationItem.leftBarButtonItem.action = @selector(pause:);
+}
+
+#pragma mark - segue prepare
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"createLine"]) {
+        EditLineViewController *edit = (EditLineViewController *) segue.destinationViewController;
+        edit.script = self.script;
+        edit.characters = [self getCharacters];
+    }
 }
 
 @end

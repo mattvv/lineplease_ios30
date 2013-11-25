@@ -13,6 +13,7 @@ pod 'HTAutocompleteTextField' #auto-complete for email address
 pod 'NSDate+TimeAgo'
 pod 'REMenu', :git => 'https://github.com/mattvv/REMenu.git'
 pod 'SWTableViewCell', :git => 'https://github.com/CEWendel/SWTableViewCell.git'
+pod 'SZTextView'
 
 pod 'TestFlightSDK'
 pod 'TestFlightFeedback'

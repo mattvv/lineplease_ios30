@@ -251,40 +251,8 @@ static HTAutocompleteManager *sharedManager;
             }
         }
     }
-    else if (textField.autocompleteType == HTAutocompleteTypeColor)
+    else if (textField.autocompleteType == HTAutocompleteTypeCharacter)
     {
-        static dispatch_once_t colorOnceToken;
-        static NSArray *colorAutocompleteArray;
-        dispatch_once(&colorOnceToken, ^
-                      {
-                          colorAutocompleteArray = @[ @"Alfred",
-                                                      @"Beth",
-                                                      @"Carlos",
-                                                      @"Daniel",
-                                                      @"Ethan",
-                                                      @"Fred",
-                                                      @"George",
-                                                      @"Helen",
-                                                      @"Inis",
-                                                      @"Jennifer",
-                                                      @"Kylie",
-                                                      @"Liam"
-                                                      @"Melissa",
-                                                      @"Noah",
-                                                      @"Omar",
-                                                      @"Penelope",
-                                                      @"Quan",
-                                                      @"Rachel",
-                                                      @"Seth"
-                                                      @"Timothy",
-                                                      @"Ulga",
-                                                      @"Vanessa",
-                                                      @"William",
-                                                      @"Xao",
-                                                      @"Yilton",
-                                                      @"Zander"];
-                      });
-        
         NSString *stringToLookFor;
 		NSArray *componentsString = [prefix componentsSeparatedByString:@","];
         NSString *prefixLastComponent = [componentsString.lastObject stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -297,7 +265,7 @@ static HTAutocompleteManager *sharedManager;
             stringToLookFor = prefixLastComponent;
         }
         
-        for (NSString *stringFromReference in colorAutocompleteArray)
+        for (NSString *stringFromReference in self.characters)
         {
             NSString *stringToCompare;
             if (ignoreCase)

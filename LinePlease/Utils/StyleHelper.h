@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SZTextView.h"
 
 @interface StyleHelper : NSObject
 
 + (void) styleMyUITextField: (UITextField *) textField;
++ (void) styleMySZTextView: (SZTextView *) textField;
 
 @end

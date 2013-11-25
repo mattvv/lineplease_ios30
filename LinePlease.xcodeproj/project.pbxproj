@@ -14,6 +14,7 @@
 		B21E20971841D79D0090AE1C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20961841D79D0090AE1C /* ProfileViewController.m */; };
 		B21E209A1841E6520090AE1C /* AddScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20991841E6520090AE1C /* AddScriptViewController.m */; };
 		B21E209E184285600090AE1C /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E209D184285600090AE1C /* Speaker.m */; };
+		B21E20A11842F16D0090AE1C /* EditLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20A01842F16D0090AE1C /* EditLineViewController.m */; };
 		B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A4CEB17FFCD9100304FD6 /* LineViewController.m */; };
 		B24A4CEE17FFCDA500304FD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
 		B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28A7A79183DD33000169BDE /* AudioToolbox.framework */; };
@@ -73,6 +74,8 @@
 		B21E20991841E6520090AE1C /* AddScriptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddScriptViewController.m; sourceTree = "<group>"; };
 		B21E209C184285600090AE1C /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
 		B21E209D184285600090AE1C /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		B21E209F1842F16D0090AE1C /* EditLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLineViewController.h; sourceTree = "<group>"; };
+		B21E20A01842F16D0090AE1C /* EditLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLineViewController.m; sourceTree = "<group>"; };
 		B24A4CEA17FFCD9100304FD6 /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
 		B24A4CEB17FFCD9100304FD6 /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -243,6 +246,8 @@
 				B21E20961841D79D0090AE1C /* ProfileViewController.m */,
 				B21E20981841E6520090AE1C /* AddScriptViewController.h */,
 				B21E20991841E6520090AE1C /* AddScriptViewController.m */,
+				B21E209F1842F16D0090AE1C /* EditLineViewController.h */,
+				B21E20A01842F16D0090AE1C /* EditLineViewController.m */,
 			);
 			path = LinePlease;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28C00D517FE6043004A31D9 /* LoginViewController.m in Sources */,
+				B21E20A11842F16D0090AE1C /* EditLineViewController.m in Sources */,
 				B28C00F617FE62DE004A31D9 /* Line.m in Sources */,
 				B21E20971841D79D0090AE1C /* ProfileViewController.m in Sources */,
 				B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */,
