@@ -146,11 +146,11 @@
 #pragma mark - Edit/Delete
 
 - (void)swippableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    Line *line = (Line*)[self objectAtIndexPath:[self.tableView indexPathForCell:cell]];
+    
     if (index == 0) {
-        NSLog(@"Edit Index");
-        //todo: edit controller
+        [self performSegueWithIdentifier:@"createLine" sender:line];
     } else {
-        Line *line = (Line*)[self objectAtIndexPath:[self.tableView indexPathForCell:cell]];
         [SVProgressHUD showWithStatus:@"Removing Line"];
         [line delete];
         [self loadObjects];
@@ -246,6 +246,10 @@
         EditLineViewController *edit = (EditLineViewController *) segue.destinationViewController;
         edit.script = self.script;
         edit.characters = [self getCharacters];
+        
+        if ([sender isKindOfClass:[Line class]]) {
+            edit.line = sender;
+        }
     }
 }
 
