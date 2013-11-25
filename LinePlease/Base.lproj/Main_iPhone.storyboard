@@ -477,7 +477,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gw7-kz-x6W" customClass="TPKeyboardAvoidingScrollView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="351"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Character" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qZW-mx-F7Y" userLabel="Character" customClass="HTAutocompleteTextField">
@@ -496,7 +496,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fQo-5d-Gjv">
-                                        <rect key="frame" x="20" y="259" width="280" height="29"/>
+                                        <rect key="frame" x="20" y="245" width="280" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <segments>
                                             <segment title="Female"/>
@@ -504,7 +504,7 @@
                                         </segments>
                                     </segmentedControl>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Bj-6p-v9i">
-                                        <rect key="frame" x="20" y="306" width="280" height="50"/>
+                                        <rect key="frame" x="20" y="281" width="280" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal">
@@ -522,8 +522,14 @@
                                             <action selector="saveLine:" destination="VKw-rx-ezS" eventType="touchUpInside" id="drx-da-Zlg"/>
                                         </connections>
                                     </button>
+                                </subviews>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Nv-EL-PMs">
+                                <rect key="frame" x="0.0" y="457" width="320" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-0c-Lli">
-                                        <rect key="frame" x="20" y="430" width="135" height="50"/>
+                                        <rect key="frame" x="20" y="52" width="135" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal">
@@ -538,13 +544,13 @@
                                             </attributedString>
                                         </state>
                                         <connections>
-                                            <action selector="signOut:" destination="kU3-9c-v3S" eventType="touchUpInside" id="KQW-gp-DYO"/>
+                                            <action selector="record:" destination="VKw-rx-ezS" eventType="touchUpInside" id="ZEc-FD-1zK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ene-Y0-FKK">
-                                        <rect key="frame" x="165" y="430" width="135" height="50"/>
+                                        <rect key="frame" x="165" y="52" width="135" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Play Line">
@@ -560,16 +566,64 @@
                                             <action selector="signOut:" destination="kU3-9c-v3S" eventType="touchUpInside" id="HFp-NF-3UU"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record your own voice for a personal touch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-ni-0f3">
+                                        <rect key="frame" x="42" y="27" width="247" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
-                            </scrollView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="PuT-Zq-Xth"/>
+                                    <constraint firstAttribute="height" constant="111" id="Ql4-sM-xbx"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOj-Tp-lMQ" userLabel="Recording">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ulT-76-ZJN">
+                                        <rect key="frame" x="142" y="215" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" red="0.76862745099999996" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-B5-Xin">
+                                        <rect key="frame" x="20" y="261" width="280" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Stop Recording">
+                                                    <attributes>
+                                                        <color key="NSColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <font key="NSFont" size="16" name="HelveticaNeue-Thin"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="stop:" destination="VKw-rx-ezS" eventType="touchUpInside" id="9Vi-rA-Rhi"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bnC-pA-1bV" firstAttribute="top" secondItem="1Nv-EL-PMs" secondAttribute="bottom" id="0dn-hM-5BH"/>
+                            <constraint firstItem="1Nv-EL-PMs" firstAttribute="leading" secondItem="aZb-RX-GSJ" secondAttribute="leading" id="36U-KM-iSM"/>
+                            <constraint firstAttribute="trailing" secondItem="1Nv-EL-PMs" secondAttribute="trailing" id="kMQ-Gl-zOF"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Line" id="87G-GU-iKK"/>
                     <connections>
                         <outlet property="characterText" destination="qZW-mx-F7Y" id="GHE-0g-icW"/>
                         <outlet property="gender" destination="fQo-5d-Gjv" id="m9K-2k-pvh"/>
                         <outlet property="lineText" destination="J2R-8S-KnB" id="oZv-Ox-W18"/>
+                        <outlet property="recordingView" destination="WOj-Tp-lMQ" id="N3e-CL-1IV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-MM-IGF" userLabel="First Responder" sceneMemberID="firstResponder"/>

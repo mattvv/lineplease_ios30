@@ -14,6 +14,7 @@ pod 'NSDate+TimeAgo'
 pod 'REMenu', :git => 'https://github.com/mattvv/REMenu.git'
 pod 'SZTextView'
 pod 'MSCMoreOptionTableViewCell'
+pod 'iOS-blur'
 
 pod 'TestFlightSDK'
 pod 'TestFlightFeedback'

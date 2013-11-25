@@ -11,8 +11,9 @@
 #import "Script.h"
 #import "SZTextView.h"
 #import "HTAutocompleteTextField.h"
+#import <AVFoundation/AVFoundation.h>
 
-@interface EditLineViewController : UIViewController
+@interface EditLineViewController : UIViewController <AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 
 @property (nonatomic, strong) Script *script;
 @property (nonatomic, strong) Line *line;
@@ -24,6 +25,14 @@
 @property (nonatomic, strong) IBOutlet UISegmentedControl *gender;
 @property (nonatomic, strong) IBOutlet UIButton *recordingButton;
 
+@property (nonatomic, strong) AVAudioRecorder *recorder;
+@property (nonatomic, strong) AVAudioPlayer *player;
+@property (nonatomic, strong) IBOutlet UIView *recordingView;
+
 - (IBAction) saveLine: (id)sender;
+
+- (IBAction)record:(id)sender;
+- (IBAction)stop:(id)sender;
+- (IBAction)play:(id)sender;
 
 @end

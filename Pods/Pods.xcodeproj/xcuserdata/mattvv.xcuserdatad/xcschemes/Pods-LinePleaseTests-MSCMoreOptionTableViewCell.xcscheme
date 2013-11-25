@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E456107673364D839396175B"
+               BlueprintIdentifier = "533E4B91AF5145469C64BF4A"
                BuildableName = "libPods-LinePleaseTests-MSCMoreOptionTableViewCell.a"
                BlueprintName = "Pods-LinePleaseTests-MSCMoreOptionTableViewCell"
                ReferencedContainer = "container:Pods.xcodeproj">

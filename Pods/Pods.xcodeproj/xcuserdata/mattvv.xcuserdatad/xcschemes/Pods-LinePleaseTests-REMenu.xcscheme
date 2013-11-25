@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EC99ED2819664C6DAA113F10"
+               BlueprintIdentifier = "7F433BCC2C614DB6B7751AB6"
                BuildableName = "libPods-LinePleaseTests-REMenu.a"
                BlueprintName = "Pods-LinePleaseTests-REMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
