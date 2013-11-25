@@ -12,9 +12,11 @@
 
 @property (nonatomic, strong) IBOutlet UISlider *playbackSpeedSlider;
 @property (nonatomic, strong) IBOutlet UISlider *silenceSpeedSlider;
+@property (nonatomic, strong) IBOutlet UISlider *pauseTimeSlider;
 
 - (IBAction)openMenu:(id)sender;
 - (IBAction)playbackSpeedChanged:(id)sender;
 - (IBAction)silenceSpeedChanged:(id)sender;
+- (IBAction)pauseTimeChanged:(id)sender;
 
 @end

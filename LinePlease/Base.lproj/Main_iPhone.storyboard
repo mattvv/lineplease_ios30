@@ -346,6 +346,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.050000000000000003" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="5xX-bc-qD9">
+                                <rect key="frame" x="18" y="258" width="284" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="pauseTimeChanged:" destination="Luj-u4-G7K" eventType="valueChanged" id="Hhf-6n-QUH"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pause Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2T-Tn-H3k">
+                                <rect key="frame" x="20" y="230" width="125" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -357,6 +371,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="pauseTimeSlider" destination="5xX-bc-qD9" id="g70-nx-f04"/>
                         <outlet property="playbackSpeedSlider" destination="ken-Jw-skO" id="ups-DV-yxz"/>
                     </connections>
                 </viewController>

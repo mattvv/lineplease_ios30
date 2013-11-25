@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Script.h"
 #import "Speaker.h"
+#import "SWTableViewCell.h"
 
-@interface LineViewController : PFQueryTableViewController<SpeakerDelegate>
+@interface LineViewController : PFQueryTableViewController<SpeakerDelegate, SWTableViewCellDelegate>
 
 @property (nonatomic, strong) Script *script;
 @property (nonatomic, strong) Speaker *speaker;

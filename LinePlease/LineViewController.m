@@ -88,6 +88,11 @@
     self.navigationItem.rightBarButtonItem.action = @selector(stop:);
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self loadObjects];
+}
 - (void) viewDidDisappear:(BOOL)animated {
     [self.speaker stopSpeaking];
     [super viewDidDisappear:animated];
@@ -111,9 +116,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)line {
     static NSString *cellIdentifier = @"LineCell";
     
-    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    SWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        NSMutableArray *rightButtons = [NSMutableArray new];
+        [rightButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0f] title:@"Edit"];
+        [rightButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f] title:@"Delete"];
+        
+        cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier containingTableView:self.tableView leftUtilityButtons:nil rightUtilityButtons:rightButtons];
+        cell.delegate = self;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
@@ -123,7 +133,7 @@
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     cell.backgroundColor = [UIColor clearColor];
-    
+    [cell setCellHeight:[self tableView:self.tableView heightForRowAtIndexPath:indexPath]];
     return cell;
 }
 
@@ -132,11 +142,28 @@
     return [NSString stringWithFormat:@"%@\n%@",name,line[@"line"]];
 }
 
+#pragma mark - Edit/Delete
+
+- (void)swippableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    if (index == 0) {
+        NSLog(@"Edit Index");
+        //todo: edit controller
+    } else {
+        Line *line = (Line*)[self objectAtIndexPath:[self.tableView indexPathForCell:cell]];
+        [SVProgressHUD showWithStatus:@"Removing Line"];
+        [line delete];
+        [self loadObjects];
+        [SVProgressHUD showSuccessWithStatus:@"Removed"];
+    }
+}
+
 #pragma mark - Height of Cells
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     Line *line = (Line *) [self objectAtIndexPath:indexPath];
     
+    
     float height = [self calculateTextViewHeight:[self formatLine:line]];
+    
     return height + 60;
 }
 
@@ -177,7 +204,7 @@
     
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
-    PFTableViewCell *cell = (PFTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    SWTableViewCell *cell = (SWTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (silent)
         cell.textLabel.textColor = [UIColor redColor];
     else

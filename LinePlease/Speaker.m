@@ -88,16 +88,26 @@
 }
 
 - (void)playLine:(Line *) line {
-    if ([[line cleanCharacter] isEqualToString:character]) {
-        [self.delegate highlightLine:line silent:YES];
-        [self speakSilence:line];
-    } else if ([line[@"recorded"] isEqualToString:@"yes"]) {
-        [self.delegate highlightLine:line silent:NO];
-        [self recordedLine:line];
-    } else {
-        [self.delegate highlightLine:line silent:NO];
-        [self synthLine:line];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults floatForKey:@"pauseAmount"]) {
+        [userDefaults setFloat:0.15 forKey:@"pauseAmount"];
     }
+    
+    //only play the line after pause time.
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)([userDefaults floatForKey:@"pauseAmount"] * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        if ([[line cleanCharacter] isEqualToString:character]) {
+            [self.delegate highlightLine:line silent:YES];
+            [self speakSilence:line];
+        } else if ([line[@"recorded"] isEqualToString:@"yes"]) {
+            [self.delegate highlightLine:line silent:NO];
+            [self recordedLine:line];
+        } else {
+            [self.delegate highlightLine:line silent:NO];
+            [self synthLine:line];
+        }
+    });
+    
     
     //todo: play recorded lines
 }
