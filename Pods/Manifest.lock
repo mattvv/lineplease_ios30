@@ -2,6 +2,7 @@ PODS:
   - Expecta (0.2.2)
   - Facebook-iOS-SDK (3.10.0)
   - HTAutocompleteTextField (1.2.6)
+  - MSCMoreOptionTableViewCell (1.1)
   - NSDate+TimeAgo (1.0.2)
   - OCMock (2.2.1)
   - Parse (1.2.15):
@@ -9,7 +10,6 @@ PODS:
   - REMenu (1.7)
   - Specta (0.1.11)
   - SVProgressHUD (0.9)
-  - SWTableViewCell (0.1.4)
   - SZTextView (1.0.2)
   - TestFlightFeedback (2.0.0):
     - TestFlightFeedback/Core
@@ -22,13 +22,13 @@ PODS:
 DEPENDENCIES:
   - Expecta
   - HTAutocompleteTextField
+  - MSCMoreOptionTableViewCell
   - NSDate+TimeAgo
   - OCMock
   - Parse
   - REMenu (from `https://github.com/mattvv/REMenu.git`)
   - Specta (from `https://github.com/mattvv/specta.git`, branch `xctest_integration`)
   - SVProgressHUD
-  - SWTableViewCell (from `https://github.com/CEWendel/SWTableViewCell.git`)
   - SZTextView
   - TestFlightFeedback
   - TestFlightSDK
@@ -40,20 +40,18 @@ EXTERNAL SOURCES:
   Specta:
     :branch: xctest_integration
     :git: https://github.com/mattvv/specta.git
-  SWTableViewCell:
-    :git: https://github.com/CEWendel/SWTableViewCell.git
 
 SPEC CHECKSUMS:
   Expecta: 99adbb2e366a02796477523bfd426143350d9caf
   Facebook-iOS-SDK: ef402579aeb30cf0c4a6370fb0a927e3dc3059e5
   HTAutocompleteTextField: 984cfc05a2dc8906ad5ce560f3a4c7a1bbf51b2f
+  MSCMoreOptionTableViewCell: ac1dd0c62ca6308b139f191b0e1cef35c9de3a2f
   NSDate+TimeAgo: fe93d3042e83093ae3630bc47ae7d57f782733f6
   OCMock: 80e4cfbc71a0e1bd28caf10a9fda27da7c4c8402
   Parse: 200f5d714e38ed4c74e93d159e6fabaf2ab8d914
   REMenu: f9fb696fcc2f4a64511ffc99e251738f0ab6b945
   Specta: 82746c6fd70b104c5d37cfbadb7bf15a2cbc4da0
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
-  SWTableViewCell: baaeaa6e0ee61355d8049f85e06c2789d89804e3
   SZTextView: c867f354d2e68e7f684cb07b8ebc302f41860e2d
   TestFlightFeedback: 2c96a2f4975c396ad6d72572909c26e1be92c18f
   TestFlightSDK: dea28c16f0bf65c49c4ed8939b2ae0b0ed9bf8b0

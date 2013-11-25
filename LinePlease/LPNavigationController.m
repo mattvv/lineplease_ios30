@@ -11,6 +11,7 @@
 #import "ProfileViewController.h"
 #import "SettingsViewController.h"
 #import "AddScriptViewController.h"
+#import "LineViewController.h"
 #import "TestFlight.h"
 #import <TestFlight+OpenFeedback.h>
 
@@ -103,7 +104,16 @@
                                                              [self.visibleViewController performSegueWithIdentifier:@"createLine" sender:self];
                                                          }];
     
-    self.linesMenu = [[REMenu alloc] initWithItems:@[scriptsItem,addlineItem]];
+    REMenuItem *reorderLines = [[REMenuItem alloc] initWithTitle:@"Re-order Lines"
+                                                       subtitle:@"Change the order of your lines"
+                                                          image:nil
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             LineViewController *lvc = (LineViewController *) self.visibleViewController;
+                                                             [lvc startDragging:self];
+                                                         }];
+    
+    self.linesMenu = [[REMenu alloc] initWithItems:@[scriptsItem,addlineItem, reorderLines]];
     [self themeMenu:self.linesMenu];
 
 }

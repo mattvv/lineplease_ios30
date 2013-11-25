@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Script.h"
 #import "Speaker.h"
-#import "SWTableViewCell.h"
+#import "MSCMoreOptionTableViewCell.h"
 
-@interface LineViewController : PFQueryTableViewController<SpeakerDelegate, SWTableViewCellDelegate>
+@interface LineViewController : PFQueryTableViewController<SpeakerDelegate, MSCMoreOptionTableViewCellDelegate>
 
 @property (nonatomic, strong) Script *script;
 @property (nonatomic, strong) Speaker *speaker;
 
 - (IBAction)openMenu:(id)sender;
-
+- (void)startDragging:(id)sender;
 @end

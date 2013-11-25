@@ -42,6 +42,11 @@
     self.title = self.script[@"name"];
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    
+    
+    /* Adding the Swipe Actions */
+
+    
 }
 
 - (IBAction)openMenu:(id)sender {
@@ -117,13 +122,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)line {
     static NSString *cellIdentifier = @"LineCell";
     
-    SWTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    MSCMoreOptionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        NSMutableArray *rightButtons = [NSMutableArray new];
-        [rightButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0f] title:@"Edit"];
-        [rightButtons sw_addUtilityButtonWithColor:[UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f] title:@"Delete"];
-        
-        cell = [[SWTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier containingTableView:self.tableView leftUtilityButtons:nil rightUtilityButtons:rightButtons];
+        cell = [[MSCMoreOptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.delegate = self;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -134,7 +135,7 @@
     cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     cell.backgroundColor = [UIColor clearColor];
-    [cell setCellHeight:[self tableView:self.tableView heightForRowAtIndexPath:indexPath]];
+
     return cell;
 }
 
@@ -143,20 +144,109 @@
     return [NSString stringWithFormat:@"%@\n%@",name,line[@"line"]];
 }
 
-#pragma mark - Edit/Delete
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewCellEditingStyleNone;
+//}
 
-- (void)swippableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
-    Line *line = (Line*)[self objectAtIndexPath:[self.tableView indexPathForCell:cell]];
-    
-    if (index == 0) {
-        [self performSegueWithIdentifier:@"createLine" sender:line];
-    } else {
-        [SVProgressHUD showWithStatus:@"Removing Line"];
-        [line delete];
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+#pragma mark - Edit/Delete
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Script *script = (Script*)[self objectAtIndexPath:indexPath];
+        [SVProgressHUD showWithStatus:@"Removing Script"];
+        [script delete];
         [self loadObjects];
         [SVProgressHUD showSuccessWithStatus:@"Removed"];
     }
 }
+
+- (void)tableView:(UITableView *)tableView moreOptionButtonPressedInRowAtIndexPath:(NSIndexPath *)indexPath {
+    Line *line = (Line*)[self objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"createLine" sender:line];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return @"Edit";
+}
+
+- (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [UIColor colorWithRed:195/255.f green:182/255.f blue:217/255.f alpha:1.0];
+}
+
+#pragma mark - dragging
+- (void)startDragging:(id)sender {
+    [self.tableView setEditing:YES animated:YES];
+    
+    self.navigationItem.rightBarButtonItem.title = @"End";
+    self.navigationItem.rightBarButtonItem.action = @selector(stopDragging:);
+}
+
+- (void)stopDragging:(id)sender {
+    [self.tableView setEditing:NO animated:YES];
+    self.navigationItem.rightBarButtonItem.title = @"Rehearse";
+    self.navigationItem.rightBarButtonItem.action = @selector(openPlayMenu:);
+}
+
+- (BOOL)tableView:(UITableView *)tableview canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    //todo: update Parse with move
+    [self stopDragging:self];
+    //    NSInteger change = [fromIndexPath row] - [toIndexPath row];
+    //    NSLog(@"Change is %i", change);
+    
+    //    if (change < 0) {
+    //        //line has moved down change spots
+    //        change = change * -1; //flip sign to determine how many spots
+    //        change = change + 1;
+    //        NSInteger starting_position = [fromIndexPath row] + 1;
+    //        //todo: set new position on the object
+    //        PFObject* line = [lines objectAtIndex:[fromIndexPath row]];
+    //        NSInteger final_position = [toIndexPath row];
+    //        [line setObject:[NSNumber numberWithInt:final_position] forKey:@"position"];
+    //        NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],final_position);
+    //        [line saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+    //            if (!error) {
+    //                // The gameScore saved successfully.
+    //            } else {
+    //                NSLog(@"Error %@", [error localizedDescription]);
+    //            }
+    //        }];
+    //        for (int i=0; i<(change-1); i++) {
+    //            PFObject *line = [lines objectAtIndex:starting_position];
+    //            NSInteger position = [[line objectForKey:@"position"] intValue] - 1;
+    //            [line setObject:[NSNumber numberWithInt:position] forKey:@"position"];
+    //            NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],position);
+    //            [line saveInBackground];
+    //            starting_position = starting_position+1;
+    //        }
+    //    } else {
+    //        //line has moved up change spots
+    //        change = change + 1;
+    //        NSInteger starting_position = [fromIndexPath row] - 1;
+    //        //todo: set new position on the object
+    //        PFObject* line = [lines objectAtIndex:[fromIndexPath row]];
+    //        NSInteger final_position = [toIndexPath row];
+    //        [line setObject:[NSNumber numberWithInt:final_position] forKey:@"position"];
+    //        NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],final_position);
+    //        [line saveInBackground]; //todo: save in background
+    //        for (int i=0; i<(change-1); i++) {
+    //            PFObject *line = [lines objectAtIndex:starting_position];
+    //            NSInteger position = [[line objectForKey:@"position"] intValue] + 1;
+    //            [line setObject:[NSNumber numberWithInt:position] forKey:@"position"];
+    //            NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],position);
+    //            [line saveInBackground];
+    //            starting_position = starting_position-1;
+    //        }
+    //    }
+}
+
 
 #pragma mark - Height of Cells
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -205,7 +295,7 @@
     
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
-    SWTableViewCell *cell = (SWTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    MSCMoreOptionTableViewCell *cell = (MSCMoreOptionTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (silent)
         cell.textLabel.textColor = [UIColor redColor];
     else

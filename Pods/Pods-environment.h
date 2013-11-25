@@ -18,6 +18,12 @@
 #define COCOAPODS_VERSION_MINOR_HTAutocompleteTextField 2
 #define COCOAPODS_VERSION_PATCH_HTAutocompleteTextField 6
 
+// MSCMoreOptionTableViewCell
+#define COCOAPODS_POD_AVAILABLE_MSCMoreOptionTableViewCell
+#define COCOAPODS_VERSION_MAJOR_MSCMoreOptionTableViewCell 1
+#define COCOAPODS_VERSION_MINOR_MSCMoreOptionTableViewCell 1
+#define COCOAPODS_VERSION_PATCH_MSCMoreOptionTableViewCell 0
+
 // NSDate+TimeAgo
 #define COCOAPODS_POD_AVAILABLE_NSDate_TimeAgo
 #define COCOAPODS_VERSION_MAJOR_NSDate_TimeAgo 1
@@ -41,12 +47,6 @@
 #define COCOAPODS_VERSION_MAJOR_SVProgressHUD 0
 #define COCOAPODS_VERSION_MINOR_SVProgressHUD 9
 #define COCOAPODS_VERSION_PATCH_SVProgressHUD 0
-
-// SWTableViewCell
-#define COCOAPODS_POD_AVAILABLE_SWTableViewCell
-#define COCOAPODS_VERSION_MAJOR_SWTableViewCell 0
-#define COCOAPODS_VERSION_MINOR_SWTableViewCell 1
-#define COCOAPODS_VERSION_PATCH_SWTableViewCell 4
 
 // SZTextView
 #define COCOAPODS_POD_AVAILABLE_SZTextView
