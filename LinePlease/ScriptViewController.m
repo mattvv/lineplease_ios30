@@ -42,6 +42,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self loadObjects];
     [super viewWillAppear:animated];
 }
 
@@ -90,6 +91,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self performSegueWithIdentifier:@"lines" sender:indexPath];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Script *script = (Script*)[self objectAtIndexPath:indexPath];
+        [SVProgressHUD showWithStatus:@"Removing Script"];
+        [script delete];
+        [self loadObjects];
+        [SVProgressHUD showSuccessWithStatus:@"Removed"];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
