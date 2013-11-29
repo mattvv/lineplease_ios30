@@ -60,7 +60,7 @@
     NSMutableArray *menuItems = [[NSMutableArray alloc] init];
     for (NSString *character in [self getCharacters]) {
         [menuItems addObject:[[REMenuItem alloc] initWithTitle:character
-                                                      subtitle:nil
+                                                      subtitle:[NSString stringWithFormat:@"%@'s lines will be silent", character]
                                                          image:nil
                                               highlightedImage:nil
                                                         action:^(REMenuItem *item) {
@@ -198,6 +198,24 @@
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
     //todo: update Parse with move
     [self stopDragging:self];
+    
+    //set the
+    Line *line = (Line *)[self objectAtIndexPath:fromIndexPath];
+    NSNumber *position = [NSNumber numberWithInt:toIndexPath.row];
+    
+    NSLog(@"Reodering Line");
+    
+    [PFCloud callFunctionInBackground:@"reorderLines"
+                       withParameters:@{@"lineId": line.objectId,
+                                        @"scriptId": self.script.objectId,
+                                        @"position": position}
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error) {
+                                        [self loadObjects];
+                                    } else {
+                                        NSLog(@"Error! %@", [error localizedDescription]);
+                                    }
+                                }];
     
     //todo: run cloud code to change line positions.
     

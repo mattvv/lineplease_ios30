@@ -15,9 +15,10 @@ pod 'REMenu', :git => 'https://github.com/mattvv/REMenu.git'
 pod 'SZTextView'
 pod 'MSCMoreOptionTableViewCell'
 pod 'iOS-blur'
+pod 'Appirater' #in app reviews
 
 pod 'TestFlightSDK'
 pod 'TestFlightFeedback'
 
-#pod "Appirater" #in app reviews
+
 

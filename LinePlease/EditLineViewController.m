@@ -58,7 +58,7 @@
         
     } else {
         self.title = @"Create Line";
-        self.lineText.placeholder = @"Enter your line";
+        self.lineText.placeholder = @"Enter your line. Add .. to your line to add a pause.";
         self.line = [[Line alloc] init];
         self.line[@"scriptId"] = self.script.objectId;
     }

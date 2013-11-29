@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## Appirater
+
+Copyright 2013. Arash Payan. This library is distributed under the terms of the MIT/X11.
+
 ## Expecta
 
 Copyright (c) 2011-2012 Specta Team - https://github.com/specta

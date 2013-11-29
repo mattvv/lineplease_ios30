@@ -1,4 +1,5 @@
 PODS:
+  - Appirater (2.0.2)
   - Expecta (0.2.2)
   - Facebook-iOS-SDK (3.10.0)
   - HTAutocompleteTextField (1.2.6)
@@ -21,6 +22,7 @@ PODS:
   - TPKeyboardAvoiding (1.2.1)
 
 DEPENDENCIES:
+  - Appirater
   - Expecta
   - HTAutocompleteTextField
   - iOS-blur
@@ -44,6 +46,7 @@ EXTERNAL SOURCES:
     :git: https://github.com/mattvv/specta.git
 
 SPEC CHECKSUMS:
+  Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
   Expecta: 99adbb2e366a02796477523bfd426143350d9caf
   Facebook-iOS-SDK: ef402579aeb30cf0c4a6370fb0a927e3dc3059e5
   HTAutocompleteTextField: 984cfc05a2dc8906ad5ce560f3a4c7a1bbf51b2f

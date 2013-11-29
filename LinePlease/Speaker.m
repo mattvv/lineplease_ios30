@@ -7,6 +7,7 @@
 //
 
 #import "Speaker.h"
+#import "Appirater.h"
 
 @interface Speaker () {
     BOOL paused;
@@ -15,6 +16,8 @@
     Line *currentLine;
     BOOL playingSynth;
     BOOL playingAudio;
+    
+    NSMutableArray *pausedLines;
 }
 @end
 
@@ -33,9 +36,34 @@
 - (void)synthLine:(Line*) line {
     NSLog(@"Speaking %@", line[@"line"]);
     //setup male or female voice.
-    
-    AVSpeechUtterance *words = [AVSpeechUtterance speechUtteranceWithString:line[@"line"]];
+    AVSpeechUtterance *words;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults floatForKey:@"pauseAmount"]) {
+        [userDefaults setFloat:0.15 forKey:@"pauseAmount"];
+    }
+    float pauseDelay = [userDefaults floatForKey:@"pauseAmount"];
+    
+    //check if the line has any pauses (..) and play split them into a string. Otherwise play the line.
+    if (!pausedLines) {
+        NSArray *splitLines = [line[@"line"] componentsSeparatedByString:@".."];
+        if ([splitLines count] > 1) {
+            pausedLines = [NSMutableArray arrayWithArray:splitLines];
+        }
+    }
+    
+    if ([pausedLines count] > 0) {
+        //line is being played in part of a paused series! Play the next line!
+        NSString *pausedLine = pausedLines[0];
+        words = [AVSpeechUtterance speechUtteranceWithString:pausedLine];
+        [pausedLines removeObject:pausedLine];
+        if ([pausedLines count] > 0) {
+            words.postUtteranceDelay = pauseDelay;
+        }
+    } else {
+        words = [AVSpeechUtterance speechUtteranceWithString:line[@"line"]];
+    }
+    
+    
     if (![userDefaults floatForKey:@"playbackSpeed"]) {
         [userDefaults setFloat:0.15 forKey:@"playbackSpeed"];
     }
@@ -122,6 +150,7 @@
         [lines removeObject:currentLine];
         [self playLine:currentLine];
     } else {
+        [Appirater userDidSignificantEvent:YES];
         lines = nil;
         character = nil;
         currentLine = nil;
@@ -134,6 +163,11 @@
 - (void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
     @synchronized(self) {
         playingSynth = NO;
+        
+        if ([pausedLines count] > 0) {
+            [self synthLine:currentLine];
+            return;
+        }
         
         if (!paused) {
             [self playNextLine];

@@ -6,6 +6,12 @@
 // project.
 
 
+// Appirater
+#define COCOAPODS_POD_AVAILABLE_Appirater
+#define COCOAPODS_VERSION_MAJOR_Appirater 2
+#define COCOAPODS_VERSION_MINOR_Appirater 0
+#define COCOAPODS_VERSION_PATCH_Appirater 2
+
 // Expecta
 #define COCOAPODS_POD_AVAILABLE_Expecta
 #define COCOAPODS_VERSION_MAJOR_Expecta 0

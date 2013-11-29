@@ -89,7 +89,7 @@
     [self themeMenu:self.menu];
     
     REMenuItem *scriptsItem = [[REMenuItem alloc] initWithTitle:@"Back to Scripts"
-                                                    subtitle:@"Back to your listing of scripts ."
+                                                    subtitle:@"Back to your listing of scripts"
                                                        image:[UIImage imageNamed:@"menu_scripts"]
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
@@ -106,7 +106,7 @@
     
     REMenuItem *reorderLines = [[REMenuItem alloc] initWithTitle:@"Re-order Lines"
                                                        subtitle:@"Change the order of your lines"
-                                                          image:nil
+                                                           image:[UIImage imageNamed:@"menu_reorder"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              LineViewController *lvc = (LineViewController *) self.visibleViewController;
