@@ -346,4 +346,14 @@
     }
 }
 
+#pragma mark - Load no scripts view!
+- (void)objectsDidLoad:(NSError *)error {
+    if ([self.objects count] > 0) {
+        self.tableView.tableFooterView = nil;
+    } else {
+        self.tableView.tableFooterView = self.helpView;
+    }
+    [super objectsDidLoad:error];
+}
+
 @end

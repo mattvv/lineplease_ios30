@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) Script *script;
 @property (nonatomic, strong) Speaker *speaker;
+@property (nonatomic, strong) IBOutlet UIView *helpView;
 
 - (IBAction)openMenu:(id)sender;
 - (void)startDragging:(id)sender;

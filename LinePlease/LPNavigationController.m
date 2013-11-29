@@ -88,8 +88,8 @@
     self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem, feedbackItem]];
     [self themeMenu:self.menu];
     
-    REMenuItem *scriptsItem = [[REMenuItem alloc] initWithTitle:@"Scripts"
-                                                    subtitle:@"View your Scripts"
+    REMenuItem *scriptsItem = [[REMenuItem alloc] initWithTitle:@"Back to Scripts"
+                                                    subtitle:@"Back to your listing of scripts ."
                                                        image:[UIImage imageNamed:@"menu_scripts"]
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
@@ -157,16 +157,24 @@
     
     menu.liveBlur = YES;
     menu.liveBlurBackgroundStyle = UIBarStyleDefault;
-    menu.liveBlurTintColor = [UIColor clearColor];
+    menu.liveBlurTintColor = [UIColor whiteColor];
     
     menu.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
     menu.textShadowColor = [UIColor clearColor];
     menu.textColor = [UIColor blackColor];
-    menu.separatorColor = [UIColor clearColor];
+    menu.separatorColor = [UIColor lightGrayColor];
+    menu.separatorHeight = 0.5f;
     
     menu.subtitleFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:12];
     menu.subtitleTextShadowColor = [UIColor clearColor];
-    menu.borderWidth = 0;
+    menu.borderColor = [UIColor lightGrayColor];
+    menu.borderWidth = 0.5f;
+    
+    menu.highlightedBackgroundColor = [UIColor lightGrayColor];
+    menu.highlightedTextShadowColor = [UIColor clearColor];
+    menu.subtitleHighlightedTextShadowColor = [UIColor clearColor];
+    
+    menu.itemHeight = 70.0f;
 }
 
 - (void) displayCharacterMenu:(NSMutableArray *)menuItems {
