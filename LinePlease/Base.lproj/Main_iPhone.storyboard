@@ -503,20 +503,13 @@
                                             <segment title="Male"/>
                                         </segments>
                                     </segmentedControl>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Bj-6p-v9i">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bj-6p-v9i">
                                         <rect key="frame" x="20" y="281" width="280" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Save">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="16" name="HelveticaNeue-Thin"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="saveLine:" destination="VKw-rx-ezS" eventType="touchUpInside" id="drx-da-Zlg"/>
@@ -528,42 +521,28 @@
                                 <rect key="frame" x="0.0" y="457" width="320" height="111"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-0c-Lli">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOV-0c-Lli">
                                         <rect key="frame" x="20" y="52" width="135" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Record line">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="16" name="HelveticaNeue-Thin"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Record line">
+                                            <color key="titleColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="record:" destination="VKw-rx-ezS" eventType="touchUpInside" id="ZEc-FD-1zK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ene-Y0-FKK">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ene-Y0-FKK">
                                         <rect key="frame" x="165" y="52" width="135" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Play Line">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="16" name="HelveticaNeue-Thin"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Play Line">
+                                            <color key="titleColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="signOut:" destination="kU3-9c-v3S" eventType="touchUpInside" id="HFp-NF-3UU"/>
+                                            <action selector="play:" destination="VKw-rx-ezS" eventType="touchUpInside" id="fXS-Ai-RHS"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Record your own voice for a personal touch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXm-ni-0f3">
@@ -588,20 +567,13 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="color" red="0.76862745099999996" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-B5-Xin">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-B5-Xin">
                                         <rect key="frame" x="20" y="261" width="280" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal">
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="Stop Recording">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="16" name="HelveticaNeue-Thin"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                        <color key="backgroundColor" red="0.76862745099999996" green="0.71372549019999998" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Stop Recording">
+                                            <color key="titleColor" white="0.97935675180000004" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="stop:" destination="VKw-rx-ezS" eventType="touchUpInside" id="9Vi-rA-Rhi"/>
@@ -623,6 +595,8 @@
                         <outlet property="characterText" destination="qZW-mx-F7Y" id="GHE-0g-icW"/>
                         <outlet property="gender" destination="fQo-5d-Gjv" id="m9K-2k-pvh"/>
                         <outlet property="lineText" destination="J2R-8S-KnB" id="oZv-Ox-W18"/>
+                        <outlet property="playButton" destination="ene-Y0-FKK" id="TeB-qe-CBY"/>
+                        <outlet property="recordingButton" destination="cOV-0c-Lli" id="fBZ-ia-iJz"/>
                         <outlet property="recordingView" destination="WOj-Tp-lMQ" id="N3e-CL-1IV"/>
                         <outlet property="whileRecordingButton" destination="MFh-B5-Xin" id="Suz-OH-opu"/>
                     </connections>

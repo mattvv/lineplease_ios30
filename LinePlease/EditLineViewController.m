@@ -48,6 +48,13 @@
         if (self.line[@"gender"] != nil && [self.line[@"gender"] isEqualToString:@"male"]) {
             [self.gender setSelectedSegmentIndex:1];
         }
+        if ([self.line[@"recorded"] isEqualToString:@"yes"]) {
+            [self.recordingButton setTitle:@"Remove Recording" forState:UIControlStateNormal];
+            self.playButton.hidden = NO;
+        } else {
+            [self.recordingButton setTitle:@"Record Line" forState:UIControlStateNormal];
+            self.playButton.hidden = YES;
+        }
         
     } else {
         self.title = @"Create Line";
@@ -87,6 +94,14 @@
 
 #pragma mark - Recording 
 - (IBAction)record:(id)sender {
+    if ([self.line[@"recorded"] isEqualToString:@"yes"]) {
+        self.line[@"recorded"] = @"no";
+        [self.recordingButton setTitle:@"Record Line" forState:UIControlStateNormal];
+        self.playButton.hidden = YES;
+        [SVProgressHUD showSuccessWithStatus:@"Recording Deleted"];
+        return;
+    }
+    
     /* if the file has been recorded, delete the existing local copy */
     
     NSString *documentDirectory = NSTemporaryDirectory();
@@ -151,31 +166,75 @@
     NSString *documentDirectory = NSTemporaryDirectory();
     NSString *path = [documentDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.wav", self.line.objectId]];
     
-    self.whileRecordingButton.enabled = NO;
+    self.whileRecordingButton.hidden = YES;
     
     NSData *data = [NSData dataWithContentsOfFile:path];
     PFFile *file = [PFFile fileWithName:@"resume.mp3" data:data];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        self.whileRecordingButton.hidden = NO;
+        [self.recordingView setHidden:YES];
         if (!error) {
             [self.line setObject:file forKey:@"recordingFile"];
             [self.line setObject:@"yes" forKey:@"recorded"];
-            [self.recordingView setHidden:YES];
-//            [self.line refresh];
-//            [self.line saveInBackgroundWithBlock:^(BOOL success, NSError *errNope) {
-//                NSLog(@"associated");
-//
-//            }];
+            [self.recordingButton setTitle:@"Remove Recording" forState:UIControlStateNormal];
+            self.playButton.hidden = NO;
         } else {
             [SVProgressHUD showErrorWithStatus:@"Could not save Recording"];
-            [self.recordingView setHidden:NO];
         }
     }];
 
 }
 
-
 #pragma mark - Playing
 
+- (IBAction)play:(id)sender {
+    self.whileRecordingButton.hidden = YES;
+    self.recordingView.hidden = NO;
+
+    NSString *documentDirectory = NSTemporaryDirectory();
+    NSString *path = [documentDirectory stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.wav", self.line.objectId]];
+    
+    NSData *recordingData;
+    
+    //play cached file if exists
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        recordingData = [NSData dataWithContentsOfFile:path];
+    } else {
+        PFFile *recording = [self.line objectForKey:@"recordingFile"];
+        recordingData = [recording getData];
+    }
+    
+    // set to output to speaker
+//    UInt32 sessionCategory = kAudioSessionCategory_MediaPlayback;
+//    AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(sessionCategory), &sessionCategory);
+//    UInt32 audioRouteOverride = kAudioSessionOverrideAudioRoute_Speaker;
+//    AudioSessionSetProperty (kAudioSessionProperty_OverrideAudioRoute,sizeof (audioRouteOverride),&audioRouteOverride);
+    /* play the file */
+    
+    NSError *err;
+    
+    self.player = [[AVAudioPlayer alloc] initWithData:recordingData error: &err];
+    if (err)
+        NSLog(@"Error %@", err.localizedDescription);
+    self.player.numberOfLoops = 0;
+    self.player.delegate = self;
+    
+    [self.player prepareToPlay];
+    [self.player play];
+}
+
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
+    NSLog(@"Decode Error occurred %@", error.localizedDescription);
+    [SVProgressHUD showErrorWithStatus:@"Could not play line"];
+    self.recordingView.hidden = YES;
+    self.whileRecordingButton.hidden = NO;
+}
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)xplayer successfully:(BOOL)flag {
+    NSLog(@"Finished Playing Audio");
+    self.recordingView.hidden = YES;
+    self.whileRecordingButton.hidden = NO;
+}
 
 
 @end

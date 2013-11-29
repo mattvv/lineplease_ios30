@@ -24,6 +24,7 @@
 
 @property (nonatomic, strong) IBOutlet UISegmentedControl *gender;
 @property (nonatomic, strong) IBOutlet UIButton *recordingButton;
+@property (nonatomic, strong) IBOutlet UIButton *playButton;
 
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) AVAudioPlayer *player;
