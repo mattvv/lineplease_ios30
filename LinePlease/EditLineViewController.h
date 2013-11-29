@@ -29,6 +29,8 @@
 @property (nonatomic, strong) AVAudioPlayer *player;
 @property (nonatomic, strong) IBOutlet UIView *recordingView;
 
+@property (nonatomic, strong) IBOutlet UIButton *whileRecordingButton;
+
 - (IBAction) saveLine: (id)sender;
 
 - (IBAction)record:(id)sender;

@@ -591,7 +591,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-B5-Xin">
                                         <rect key="frame" x="20" y="261" width="280" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.76470588240000004" green="0.71372549019999998" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Stop Recording">
@@ -624,6 +624,7 @@
                         <outlet property="gender" destination="fQo-5d-Gjv" id="m9K-2k-pvh"/>
                         <outlet property="lineText" destination="J2R-8S-KnB" id="oZv-Ox-W18"/>
                         <outlet property="recordingView" destination="WOj-Tp-lMQ" id="N3e-CL-1IV"/>
+                        <outlet property="whileRecordingButton" destination="MFh-B5-Xin" id="Suz-OH-opu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UbY-MM-IGF" userLabel="First Responder" sceneMemberID="firstResponder"/>
