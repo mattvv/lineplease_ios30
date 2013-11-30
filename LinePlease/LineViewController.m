@@ -11,7 +11,7 @@
 #import "LPNavigationController.h"
 #import "EditLineViewController.h"
 
-#define FONT_SIZE 17.0f
+#define FONT_SIZE 22.0f
 
 @interface LineViewController ()
 
@@ -217,55 +217,6 @@
                                     }
                                 }];
     
-    //todo: run cloud code to change line positions.
-    
-    //    NSInteger change = [fromIndexPath row] - [toIndexPath row];
-    //    NSLog(@"Change is %i", change);
-    
-    //    if (change < 0) {
-    //        //line has moved down change spots
-    //        change = change * -1; //flip sign to determine how many spots
-    //        change = change + 1;
-    //        NSInteger starting_position = [fromIndexPath row] + 1;
-    //        //todo: set new position on the object
-    //        PFObject* line = [lines objectAtIndex:[fromIndexPath row]];
-    //        NSInteger final_position = [toIndexPath row];
-    //        [line setObject:[NSNumber numberWithInt:final_position] forKey:@"position"];
-    //        NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],final_position);
-    //        [line saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-    //            if (!error) {
-    //                // The gameScore saved successfully.
-    //            } else {
-    //                NSLog(@"Error %@", [error localizedDescription]);
-    //            }
-    //        }];
-    //        for (int i=0; i<(change-1); i++) {
-    //            PFObject *line = [lines objectAtIndex:starting_position];
-    //            NSInteger position = [[line objectForKey:@"position"] intValue] - 1;
-    //            [line setObject:[NSNumber numberWithInt:position] forKey:@"position"];
-    //            NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],position);
-    //            [line saveInBackground];
-    //            starting_position = starting_position+1;
-    //        }
-    //    } else {
-    //        //line has moved up change spots
-    //        change = change + 1;
-    //        NSInteger starting_position = [fromIndexPath row] - 1;
-    //        //todo: set new position on the object
-    //        PFObject* line = [lines objectAtIndex:[fromIndexPath row]];
-    //        NSInteger final_position = [toIndexPath row];
-    //        [line setObject:[NSNumber numberWithInt:final_position] forKey:@"position"];
-    //        NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],final_position);
-    //        [line saveInBackground]; //todo: save in background
-    //        for (int i=0; i<(change-1); i++) {
-    //            PFObject *line = [lines objectAtIndex:starting_position];
-    //            NSInteger position = [[line objectForKey:@"position"] intValue] + 1;
-    //            [line setObject:[NSNumber numberWithInt:position] forKey:@"position"];
-    //            NSLog(@"Setting line %@ to Position %i", [line objectForKey:@"line"],position);
-    //            [line saveInBackground];
-    //            starting_position = starting_position-1;
-    //        }
-    //    }
 }
 
 
@@ -281,7 +232,7 @@
 
 - (float)calculateTextViewHeight:(NSString *)text
 {
-    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"AmericanTypewriter" size:FONT_SIZE]}];
+    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:FONT_SIZE]}];
     
     return size.height;
 }

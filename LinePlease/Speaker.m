@@ -220,6 +220,7 @@
             [self.player stop];
     }
     
+    pausedLines = nil;
     lines = nil;
     character = nil;
     currentLine = nil;
