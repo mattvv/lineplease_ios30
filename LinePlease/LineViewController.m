@@ -11,7 +11,7 @@
 #import "LPNavigationController.h"
 #import "EditLineViewController.h"
 
-#define FONT_SIZE 22.0f
+#define FONT_SIZE 28.0f
 
 @interface LineViewController ()
 

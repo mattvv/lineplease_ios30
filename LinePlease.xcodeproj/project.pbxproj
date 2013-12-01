@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E0E7AA2B4884B2C8C4B79EA /* libPods-LinePleaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3C7E93680124757A63536EB /* libPods-LinePleaseTests.a */; };
 		85F3A0C4BC0B4C4E8956A46C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD0559C796347E6BF0180AF /* libPods.a */; };
+		B2066F16184C006E00996519 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2066F15184C006E00996519 /* ForgotPasswordViewController.m */; };
 		B21E20911841B9F30090AE1C /* LPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20901841B9F30090AE1C /* LPNavigationController.m */; };
 		B21E20941841D6750090AE1C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20931841D6750090AE1C /* SettingsViewController.m */; };
 		B21E20971841D79D0090AE1C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20961841D79D0090AE1C /* ProfileViewController.m */; };
@@ -64,6 +65,8 @@
 /* Begin PBXFileReference section */
 		1AE31AC999B34434A27DF5A2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		ABD0559C796347E6BF0180AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2066F14184C006E00996519 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
+		B2066F15184C006E00996519 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
 		B21E208F1841B9F30090AE1C /* LPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPNavigationController.h; sourceTree = "<group>"; };
 		B21E20901841B9F30090AE1C /* LPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPNavigationController.m; sourceTree = "<group>"; };
 		B21E20921841D6750090AE1C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				B28A7A82183F1DF700169BDE /* EmailLoginViewController.m */,
 				B28A7A8C183F31B800169BDE /* SignupViewController.h */,
 				B28A7A8D183F31B800169BDE /* SignupViewController.m */,
+				B2066F14184C006E00996519 /* ForgotPasswordViewController.h */,
+				B2066F15184C006E00996519 /* ForgotPasswordViewController.m */,
 			);
 			name = Outside;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				B28A7A8E183F31B800169BDE /* SignupViewController.m in Sources */,
 				B28A7A88183F2A0C00169BDE /* StyleHelper.m in Sources */,
 				B21E209A1841E6520090AE1C /* AddScriptViewController.m in Sources */,
+				B2066F16184C006E00996519 /* ForgotPasswordViewController.m in Sources */,
 				B28A7A83183F1DF700169BDE /* EmailLoginViewController.m in Sources */,
 				B28C010217FE670B004A31D9 /* User.m in Sources */,
 				B21E20911841B9F30090AE1C /* LPNavigationController.m in Sources */,
