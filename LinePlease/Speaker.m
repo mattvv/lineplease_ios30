@@ -72,6 +72,8 @@
     
     if ([line isMale]) {
         words.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-gb"];
+    } else {
+        words.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-us"];
     }
     
     @synchronized(self) {

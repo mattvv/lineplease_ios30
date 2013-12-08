@@ -11,7 +11,7 @@
 #import "LPNavigationController.h"
 #import "EditLineViewController.h"
 
-#define FONT_SIZE 28.0f
+#define FONT_SIZE 17.0f
 
 @interface LineViewController ()
 
@@ -232,8 +232,11 @@
 
 - (float)calculateTextViewHeight:(NSString *)text
 {
-    CGSize size = [text sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:FONT_SIZE]}];
+    NSAttributedString *newText = [[NSAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue-Light" size:FONT_SIZE]}];
     
+    UITextView *calculationView = [[UITextView alloc] init];
+    [calculationView setAttributedText:newText];
+    CGSize size = [calculationView sizeThatFits:CGSizeMake(300.0, FLT_MAX)];
     return size.height;
 }
 
