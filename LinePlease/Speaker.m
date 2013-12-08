@@ -108,7 +108,7 @@
     self.player = [[AVAudioPlayer alloc] initWithData:recordingData error: &err];
     self.player.numberOfLoops = 0;
     self.player.delegate = self;
-    
+    self.player.volume = 1.0;
     
     @synchronized(self) {
         playingAudio = YES;

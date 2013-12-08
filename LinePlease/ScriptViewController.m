@@ -24,8 +24,8 @@
         self.textKey = @"name";
         
         self.pullToRefreshEnabled = YES;
-        self.paginationEnabled = YES;
-        self.objectsPerPage = 25;
+        self.paginationEnabled = NO;
+        self.objectsPerPage = 200;
     }
     return self;
 }
@@ -65,6 +65,8 @@
     if (self.objects.count == 0) {
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
+    
+    query.limit = 250;
     
     [query orderByDescending:@"createdAt"];
     return query;
