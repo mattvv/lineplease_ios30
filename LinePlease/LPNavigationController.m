@@ -85,7 +85,7 @@
                                                           action:^(REMenuItem *item) {
                                                             [TestFlight openFeedbackView];
                                                           }];
-    self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem]];
+    self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem, feedbackItem]];
     [self themeMenu:self.menu];
     
     REMenuItem *scriptsItem = [[REMenuItem alloc] initWithTitle:@"Back to Scripts"
