@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Script.h"
 #import "Speaker.h"
-#import "MSCMoreOptionTableViewCell.h"
+#import "LineCell.h"
 
-@interface LineViewController : PFQueryTableViewController<SpeakerDelegate, MSCMoreOptionTableViewCellDelegate>
+@interface LineViewController : PFQueryTableViewController<SpeakerDelegate, MSCMoreOptionTableViewCellDelegate, UIGestureRecognizerDelegate, LineCellDelegate>
 
 @property (nonatomic, strong) Script *script;
 @property (nonatomic, strong) Speaker *speaker;

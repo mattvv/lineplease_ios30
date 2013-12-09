@@ -13,8 +13,9 @@
 
 #define FONT_SIZE 17.0f
 
-@interface LineViewController ()
-
+@interface LineViewController () {
+    NSArray *playLines;
+}
 @end
 
 @implementation LineViewController
@@ -42,11 +43,6 @@
     self.title = self.script[@"name"];
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
-    
-    
-    /* Adding the Swipe Actions */
-
-    
 }
 
 - (IBAction)openMenu:(id)sender {
@@ -85,7 +81,11 @@
         
     }
     
-    [self.speaker startSpeaking:self.objects withCharacter:character];
+    //todo: self.objects!
+    if (!playLines)
+        playLines = self.objects;
+    
+    [self.speaker startSpeaking:playLines withCharacter:character];
     
     //setup the barbutton items
 //    self.navigationItem.leftBarButtonItem.title = @"Pause";
@@ -122,10 +122,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)line {
     static NSString *cellIdentifier = @"LineCell";
     
-    MSCMoreOptionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    LineCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[MSCMoreOptionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell = [[LineCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.delegate = self;
+        cell.playDelegate = self;
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
@@ -153,7 +154,7 @@
     return YES;
 }
 
-#pragma mark - Edit/Delete
+#pragma mark - Edit/Delete/Play
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Script *script = (Script*)[self objectAtIndexPath:indexPath];
@@ -175,6 +176,22 @@
 
 - (UIColor *)tableView:(UITableView *)tableView backgroundColorForMoreOptionButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [UIColor colorWithRed:195/255.f green:182/255.f blue:217/255.f alpha:1.0];
+}
+
+- (void)playCellPressed:(UITableViewCell *)cell {
+    //todo: calculate play lines!
+    //get indexPath
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    //get line
+    PFObject *object = [self objectAtIndexPath:indexPath];
+    NSUInteger index = [self.objects indexOfObject:object];
+    NSMutableArray *lines = [NSMutableArray arrayWithArray:self.objects];
+    [lines removeObjectsInRange:NSMakeRange(0, index)];
+    
+    playLines = nil;
+    playLines = [NSArray arrayWithArray:lines];
+    
+    [self openPlayMenu:nil];
 }
 
 #pragma mark - dragging
@@ -270,7 +287,7 @@
     
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     
-    MSCMoreOptionTableViewCell *cell = (MSCMoreOptionTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+    LineCell *cell = (LineCell *)[self.tableView cellForRowAtIndexPath:indexPath];
     if (silent)
         cell.textLabel.textColor = [UIColor redColor];
     else

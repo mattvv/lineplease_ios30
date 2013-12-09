@@ -16,6 +16,7 @@
 		B21E209A1841E6520090AE1C /* AddScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20991841E6520090AE1C /* AddScriptViewController.m */; };
 		B21E209E184285600090AE1C /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E209D184285600090AE1C /* Speaker.m */; };
 		B21E20A11842F16D0090AE1C /* EditLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B21E20A01842F16D0090AE1C /* EditLineViewController.m */; };
+		B23DBA1B185551B300FFEAA5 /* LineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B23DBA1A185551B300FFEAA5 /* LineCell.m */; };
 		B24A4CEC17FFCD9100304FD6 /* LineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24A4CEB17FFCD9100304FD6 /* LineViewController.m */; };
 		B24A4CEE17FFCDA500304FD6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */; };
 		B28A7A7A183DD33000169BDE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B28A7A79183DD33000169BDE /* AudioToolbox.framework */; };
@@ -79,6 +80,9 @@
 		B21E209D184285600090AE1C /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
 		B21E209F1842F16D0090AE1C /* EditLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditLineViewController.h; sourceTree = "<group>"; };
 		B21E20A01842F16D0090AE1C /* EditLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditLineViewController.m; sourceTree = "<group>"; };
+		B23DBA19185551B300FFEAA5 /* LineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineCell.h; path = ../LineCell.h; sourceTree = "<group>"; };
+		B23DBA1A185551B300FFEAA5 /* LineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LineCell.m; path = ../LineCell.m; sourceTree = "<group>"; };
+		B23DBA1C18555D4100FFEAA5 /* LineCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LineCellDelegate.h; path = ../LineCellDelegate.h; sourceTree = "<group>"; };
 		B24A4CEA17FFCD9100304FD6 /* LineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineViewController.h; sourceTree = "<group>"; };
 		B24A4CEB17FFCD9100304FD6 /* LineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineViewController.m; sourceTree = "<group>"; };
 		B24A4CED17FFCDA500304FD6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -253,6 +257,9 @@
 				B21E20991841E6520090AE1C /* AddScriptViewController.m */,
 				B21E209F1842F16D0090AE1C /* EditLineViewController.h */,
 				B21E20A01842F16D0090AE1C /* EditLineViewController.m */,
+				B23DBA19185551B300FFEAA5 /* LineCell.h */,
+				B23DBA1A185551B300FFEAA5 /* LineCell.m */,
+				B23DBA1C18555D4100FFEAA5 /* LineCellDelegate.h */,
 			);
 			path = LinePlease;
 			sourceTree = "<group>";
@@ -492,6 +499,7 @@
 				B2066F16184C006E00996519 /* ForgotPasswordViewController.m in Sources */,
 				B28A7A83183F1DF700169BDE /* EmailLoginViewController.m in Sources */,
 				B28C010217FE670B004A31D9 /* User.m in Sources */,
+				B23DBA1B185551B300FFEAA5 /* LineCell.m in Sources */,
 				B21E20911841B9F30090AE1C /* LPNavigationController.m in Sources */,
 				B28C00CC17FE6043004A31D9 /* AppDelegate.m in Sources */,
 				B28A7A8B183F30A600169BDE /* HTAutocompleteManager.m in Sources */,
