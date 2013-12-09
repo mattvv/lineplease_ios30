@@ -29,8 +29,13 @@
         [userDefaults setFloat:0.15 forKey:@"pauseAmount"];
     }
     
+    if (![userDefaults floatForKey:@"silenceSpeed"]) {
+        [userDefaults setFloat:0.5 forKey:@"silenceSpeed"];
+    }
+    
     self.playbackSpeedSlider.value = [userDefaults floatForKey:@"playbackSpeed"];
     self.pauseTimeSlider.value = [userDefaults floatForKey:@"pauseAmount"];
+    self.silenceSpeedSlider.value = [userDefaults floatForKey:@"silenceSpeed"];
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 }
 
@@ -48,7 +53,10 @@
 }
 
 - (IBAction)silenceSpeedChanged:(id)sender {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
+    float value = self.silenceSpeedSlider.value;
+    [userDefaults setFloat:value forKey:@"silenceSpeed"];
 }
 
 - (IBAction)pauseTimeChanged:(id)sender {

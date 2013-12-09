@@ -36,8 +36,13 @@
         count++;
     }
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults floatForKey:@"silenceSpeed"]) {
+        [userDefaults setFloat:0.5 forKey:@"silenceSpeed"];
+    }
     
-    count = (count * 520) / 1000;
+    
+    count = count * 520 / 1000 * 2 * [userDefaults floatForKey:@"silenceSpeed"];
     //todo: silence time.
     
     NSLog(@"Silence Time is %f", count);

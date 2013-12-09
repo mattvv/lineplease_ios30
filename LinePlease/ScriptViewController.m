@@ -101,8 +101,8 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Script *script = (Script*)[self objectAtIndexPath:indexPath];
         [SVProgressHUD showWithStatus:@"Removing Script"];
+        Script *script = (Script*)[self objectAtIndexPath:indexPath];
         [script delete];
         [self loadObjects];
         [SVProgressHUD showSuccessWithStatus:@"Removed"];
