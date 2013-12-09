@@ -78,13 +78,13 @@
                                                              }
                                                          }];
     
-//    REMenuItem *feedbackItem = [[REMenuItem alloc] initWithTitle:@"Feedback"
-//                                                        subtitle:@"Found a bug? Send us feedback!"
-//                                                           image:nil
-//                                                highlightedImage:nil
-//                                                          action:^(REMenuItem *item) {
-//                                                            [TestFlight openFeedbackView];
-//                                                          }];
+    REMenuItem *feedbackItem = [[REMenuItem alloc] initWithTitle:@"Feedback"
+                                                        subtitle:@"Found a bug? Send us feedback!"
+                                                           image:nil
+                                                highlightedImage:nil
+                                                          action:^(REMenuItem *item) {
+                                                            [TestFlight openFeedbackView];
+                                                          }];
     self.menu = [[REMenu alloc] initWithItems:@[addScriptItem, homeItem, settingsItem, profileItem]];
     [self themeMenu:self.menu];
     
