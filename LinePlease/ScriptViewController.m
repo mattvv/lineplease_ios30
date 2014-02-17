@@ -112,11 +112,12 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [SVProgressHUD showWithStatus:@"Removing Script"];
         Script *script = (Script*)[self objectAtIndexPath:indexPath];
-        [script delete];
-        [self loadObjects];
-        [SVProgressHUD showSuccessWithStatus:@"Removed"];
+        [SVProgressHUD showWithStatus:@"Removing Script"];
+        [PFCloud callFunctionInBackground:@"removeScript" withParameters:@{@"scriptId":script.objectId} block:^(id object, NSError *error) {
+            [self loadObjects];
+            [SVProgressHUD showSuccessWithStatus:@"Removed"];
+        }];
     }
 }
 
