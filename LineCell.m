@@ -39,6 +39,19 @@
 */
 
 - (void) handleLongPress:(UILongPressGestureRecognizer *)recognizer {
+    
+    //get parent
+    id view = [self superview];
+    while ([view isKindOfClass:[UITableView class]] == NO) {
+        view = [view superview];
+    }
+    UITableView *tableView = (UITableView *)view;
+    
+    //if parent is editing then return and don't handle longpress mattvv/lineplease#85
+    if (tableView.editing) {
+        return;
+    }
+    
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         counter = 0;
         oldText = nil;
