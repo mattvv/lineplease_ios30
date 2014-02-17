@@ -157,11 +157,12 @@
 #pragma mark - Edit/Delete/Play
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Script *script = (Script*)[self objectAtIndexPath:indexPath];
-        [SVProgressHUD showWithStatus:@"Removing Script"];
-        [script delete];
-        [self loadObjects];
-        [SVProgressHUD showSuccessWithStatus:@"Removed"];
+        Line *line = (Line*)[self objectAtIndexPath:indexPath];
+        [SVProgressHUD showWithStatus:@"Removing Line"];
+        [PFCloud callFunctionInBackground:@"removeLine" withParameters:@{@"lineId":line.objectId} block:^(id object, NSError *error) {
+            [self loadObjects];
+            [SVProgressHUD showSuccessWithStatus:@"Removed"];
+        }];
     }
 }
 

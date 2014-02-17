@@ -12,6 +12,7 @@
 @interface ScriptViewController : PFQueryTableViewController
 
 @property (nonatomic, strong) IBOutlet UIView *helpView;
+@property (nonatomic, strong) UISearchBar *searchBar;
 
 - (IBAction)openMenu:(id)sender;
 

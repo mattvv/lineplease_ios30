@@ -38,6 +38,17 @@
     [self.navigationItem setHidesBackButton:YES animated:YES];
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    
+    [self setupSearchBar];
+}
+
+- (void)setupSearchBar {
+    self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    self.tableView.tableHeaderView = self.searchBar;
+    
+    // scroll just past the search bar initially
+    CGPoint offset = CGPointMake(0, self.searchBar.frame.size.height);
+    self.tableView.contentOffset = offset;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
